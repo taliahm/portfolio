@@ -18,7 +18,8 @@ gulp.task('styles', ()=> {
             title: 'Error in CSS 😩'
         })))
         .pipe(gulp.dest('./public/styles/'))
-    })
+        
+    });
 
 gulp.task('js', () => {
     browserify('src/app.js')
@@ -46,7 +47,8 @@ gulp.task('bs', () => {
 
 
 gulp.task('default', ['js','bs', 'styles'], () => {
+    gulp.watch('src/styles/**/*.styl', ['styles']);
     gulp.watch('src/**/*.js',['js']);
     gulp.watch('src/styles/**/*.styl',reload);
-     gulp.watch('*.html', reload);
+    gulp.watch('*.html', reload);
 });
