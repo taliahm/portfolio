@@ -291,13 +291,14 @@ header
 .gallery__itemDescription
 	position relative
 	z-index 5
-	background transparentify(offWhite, 0.9)
+	// background transparentify(offWhite, 0.9)
 	padding 10px 20px
 	max-width: 50%;
 	font-size 1.3rem
 
 .gallery__item--imgFirst
 	left -20px
+	margin-left: 50px;
 	
 .gallery__item--imgSecond
 	right -20px
@@ -309,39 +310,26 @@ header
 	width 100%
 	position relative
 	overflow hidden
-	// border 2px solid grey
-	// border-top 15px solid grey
-	// border-radius 5px 5px 0 0
-
-.gallery__item .imgOverlay
-	position absolute
-	top 0
-	bottom 0
-	left 0
-	right 0
-	background transparentify(purple, 0.3)
-	z-index 2
-	transition all 0.3s ease-in-out
+	max-width 40%
 	box-shadow 2px 30px 30px grey
+	transition all 0.3s ease-in-out
+	
 
-.gallery__item .imgOverlay:hover
-	background none
-	// box-shadow 12px 10px 30px grey
-	// left 100%
-
-.gallery__item .imgOverlay:hover ~ img
-	transform scale(1.1)
-
+.gallery__item .imgContain:hover
+	box-shadow 4px 5px 30px grey
 
 .gallery__item .imgContain img 
 	max-width 100%
 	display block
 	transform scale(1)
 	transition all 0.3s ease-in-out
+	box-shadow: -5px 30px 30px lightgrey
+	
 
 
 .gallery__itemDescription h4
 	font-size 3rem
+	font-weight 400
 
 .gallery__item .itemDescription__list
 	list-style none

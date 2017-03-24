@@ -3,4 +3,32 @@
 
 console.log('hello');
 
+var portApp = {};
+
+portApp.scroll = function () {};
+
+portApp.clickPortfolio = function () {
+	$('.imgContain').on('click', function (e) {
+		console.log('clicked an image contain');
+		console.log($('.imgContain'));
+		var id = $('.imgContain').attr('id');
+		console.log(id);
+		if (id === 'spill') {
+			window.open('http://talialongname.com/spill');
+		}
+	});
+};
+
+portApp.events = function () {
+	portApp.clickPortfolio();
+};
+
+portApp.init = function () {
+	portApp.events();
+};
+
+$(function () {
+	portApp.init();
+});
+
 },{}]},{},[1]);
