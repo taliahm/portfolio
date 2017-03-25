@@ -1,0 +1,112 @@
+	 
+.profileWrap
+	padding-top 150px
+	padding-bottom 150px
+	display flex
+	flex-direction column
+	align-items center
+	+for_bp(sml)
+		padding-bottom 0
+		
+//SHAPES in Profile section
+.profile__header
+	position relative
+
+.profileBgrnd
+	position absolute
+
+.smallPurpleCircle
+	bottom -95%
+	right -155%
+
+.smallPurpleCircle img
+	height 75px
+
+.triangleCircle
+	top 0
+	left -150%
+	+for_bp(lrg)
+		left -100%
+	+for_bp(med)
+		left -70%
+		top -20%
+	+for_bp(sml)
+		left -100%
+		top -50%
+
+.triangleCircle img
+	height 150px
+
+
+//THESE ARE INSIDE OF THE LARGE DIV
+.profileContain
+	display flex
+	margin 0 auto
+	align-items center
+	justify-content center
+	position relative
+	bottom 25px
+	+for_bp(med)
+		bottom 200px
+	+for_bp(sml)
+		flex-direction column
+		// bottom 200px
+		margin 0 10px
+
+.profile__imgContain
+	width 25%
+	position relative
+	+for_bp(med)
+		width 45%
+	+for_bp(sml)
+		order 2
+		width 75%
+		margin-top 40px
+
+.profile__imgContain img
+	max-width 100%
+	position relative
+	z-index 100
+
+.profile__text
+	font-size 1.7rem
+	width 30%
+	position relative
+	z-index 101
+	left -30px
+	color darken(grey, 40)
+	+for_bp(lrg)
+		width 60%
+	+for_bp(med)
+		width 60%
+	+for_bp(sml)
+		width 100%
+		order 1
+		left auto
+		
+
+
+.profile__text p:first-child
+	line-height 1.5
+	// font-family serif
+	font-size 2rem
+	letter-spacing 1.1px
+	color pink
+	
+.profile__text p:last-child
+	font-size 1.5rem
+	margin-top 20px
+	letter-spacing 1.08px
+	line-height 1.3
+
+.greyCircle
+	// height 100px
+	position absolute
+	bottom -50%
+	left -50%
+	z-index 95
+	
+
+.greyCircle img
+	height 400px
+	

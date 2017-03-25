@@ -13,4 +13,22 @@ textDeco(color)
 	border-left 1px solid color
 	height 50px
 	margin 0 10px 0 10px
-	
+	+for_bp(sml)
+		height 25px
+
+media_queries = {
+  sml  : "only screen and (max-width: 540px)",
+  med  : "only screen and (min-width: 540px) and (max-width: 767px)",
+  lrg : "only screen and (min-width: 767px) and (max-width: 940px)",
+  xlrg : "only screen and (min-width: 940px) and (max-width: 1200px)",
+}
+
+for_bp(breakpoints)
+	conditions = ()
+	for breakpoint in breakpoints
+		push(conditions, media_queries[breakpoint])
+	conditions = join(", ", conditions)
+	@media conditions
+		{block}
+
+

@@ -11,7 +11,7 @@ const stylus = require('gulp-stylus');
 
 
 gulp.task('styles', ()=> {
-    return gulp.src('./src/styles/**/*.styl')
+    return gulp.src('./src/styles/*.styl')
         .pipe(stylus()
         .on('error',notify.onError({
             message: "Error: <%= error.message %>",

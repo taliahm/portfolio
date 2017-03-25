@@ -1,0 +1,122 @@
+.headerAndProfileWrap
+	position relative
+	
+header
+	background purple
+	min-height 80vh
+	z-index -1
+	display flex
+	position relative
+	// clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%)
+	padding 100px 0 50px 0
+	angled-edge('outside bottom', 'lower right', purple, 1600, 250)
+	+for_bp(sml)
+		min-height auto
+		padding 200px 0 150px 0
+
+.menu 
+	position absolute
+	right 0
+	top 0
+	padding 30px 40px 0 0
+	z-index 5
+	
+
+.menu a
+	font-size 3rem
+	color white
+//This is all the header floating images
+.bgrndImgContain
+	position absolute
+
+.pinkLine
+	top -90%
+	left 55%
+	+for_bp(sml)
+		left auto
+		top -35%
+		right 90%
+		z-index -2
+	
+.pinkLine img
+	height 75px
+	
+.blueSquiggle
+	bottom -90%
+	right 15%
+	+for_bp(sml)
+		bottom -50%
+		right 1%
+
+.blueSquiggle img
+	height 75px
+
+.greenArrow
+	bottom -90%
+	right 75%
+	+for_bp(sml)
+		top -25%
+		right -10%
+		bottom auto
+		
+
+.greenArrow img
+	height 75px
+	
+.header__text 
+	transform rotate(-90deg)
+	// transform-origin: bottom center
+	color black
+	margin auto
+	// align-self flex-end
+	// margin 0 auto
+	position relative
+	// bottom 0
+	// left 50%
+
+.header__text h1 
+	margin 0
+	font-size 8rem
+	color white
+	line-height 0.7
+	text-transform uppercase
+
+
+.header__text h2
+	font-size 6.5rem
+	color white
+	text-transform uppercase
+	line-height 0.9
+
+.header__text h4
+	font-size 2rem
+	color pink
+
+
+//HAMBURGER
+.menuInner 
+	display none
+	position absolute
+	right 40px
+	top 50px
+	text-align right
+	list-style none
+	font-size 2rem
+	+for_bp(sml)
+		background transparentify(offWhite, 0.95)
+		right 0
+		left 0
+		padding 10px
+		font-size 1.5rem
+
+.menuInner li
+	+for_bp(sml)
+		padding 20px 0
+
+.menuShow
+	display block
+	
+//Hidden name for SEO
+h1.hidden
+	position absolute
+	left -99999px

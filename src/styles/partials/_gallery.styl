@@ -1,0 +1,209 @@
+//GALLERY Sections
+
+.gallery
+	position relative
+	padding-top 150px
+	padding-bottom 250px
+
+.galleryBgrnd
+	position absolute
+
+.purplePinkTriangle
+	right -2%
+	top 5%
+	+for_bp(med)
+		top -1%
+		z-index 3
+	+for_bp(sml)
+		top 1%
+		z-index 3
+
+.purplePinkTriangle img
+	height 250px
+	
+.galleryBlueLines
+	left 2%
+	bottom 30%
+	+for_bp(sml)
+		left -10%
+
+.galleryBlueLines img
+	height 100px
+	
+
+.pinkCircle
+	left 2%
+	bottom 20%
+	+for_bp(med)
+		bottom 25%
+		z-index -2
+
+.pinkCircle img
+	height 100px
+
+
+.gallery__header
+	padding-top 150px
+
+.gallery__containItems
+	display flex
+	flex-direction column
+	align-items center
+	margin 0 auto
+	max-width 60%
+	+for_bp(xlrg)
+		max-width 80%
+	+for_bp(lrg)
+		max-width 80%
+	+for_bp(med)
+		max-width 95%
+	+for_bp(sml)
+		max-width 100%
+	
+.gallery__item
+	display flex
+	align-items center
+	margin 75px 0 
+	+for_bp(sml)
+		flex-direction column
+		margin 20px 0
+
+.gallery__itemDescription
+	padding 10px 20px
+	max-width: 50%;
+	font-size 1.3rem
+	+for_bp(xlrg)
+		max-width 60%
+	+for_bp(med)
+		max-width 80%
+	+for_bp(sml)
+		order 2
+		max-width 80%
+		padding 0
+		margin 0
+
+.gallery__item--imgFirst
+	left -20px
+	margin-left: 50px
+	+for_bp(lrg)
+		margin-left 20px
+	+for_bp(med)
+		margin-left 0
+	+for_bp(sml)
+		margin-left 0
+		left auto
+		text-align center
+	
+.gallery__item--imgSecond
+	right -20px
+	text-align right
+	margin-right 50px
+	+for_bp(lrg)
+		margin-right 20px
+	+for_bp(med)
+		margin-right 0
+	+for_bp(sml)
+		margin-right 0
+		right auto
+		text-align center
+
+.gallery__item .imgContain
+	width 100%
+	position relative
+	overflow hidden
+	max-width 40%
+	box-shadow 2px 30px 30px grey
+	transition all 0.3s ease-in-out
+	flex-shrink 0
+	+for_bp(lrg)
+		max-width 50%
+	+for_bp(med)
+		max-width 50%
+	+for_bp(sml)
+		box-shadow 14px -10px 30px #b2b2b8;
+		max-width 70%
+		margin-bottom 20px
+	
+
+.gallery__item .imgContain:hover
+	box-shadow 4px 5px 30px grey
+
+.gallery__item .imgContain img 
+	max-width 100%
+	display block
+	transform scale(1)
+	transition all 0.3s ease-in-out
+	box-shadow: -5px 30px 30px lightgrey
+	
+
+
+.gallery__itemDescription h4
+	font-size 3rem
+	font-weight 400
+	margin-bottom 10px
+
+.gallery__item .itemDescription__list
+	list-style none
+	display flex
+	padding 0
+	flex-wrap wrap
+	+for_bp(sml)
+		justify-content center
+
+.gallery__item .itemDescription__list--imgSecond
+	justify-content flex-end
+	+for_bp(sml)
+		justify-content center
+
+.gallery__item .itemDescription__list li
+	margin 5px
+	border 1px solid purple
+	padding 3px
+	font-size 1.4rem
+
+
+.gallery__item a
+	text-decoration none
+	// color pink
+	background purple
+	padding 5px 10px
+	color white
+	font-size 1.8rem
+	margin-bottom 10px
+	display inline-block
+	// letter-spacing 1.2px
+	// margin-right 10px
+	transform scale(1)
+	transition all 0.3s ease-in
+	&:hover
+		background pink
+
+.gallery__itemDescription .viewLive--right
+	margin-right 10px
+	// margin-left 20px
+	// display inline-block
+
+.greyDots--relative
+	position relative
+	
+.decoContain.greyDots
+	position absolute
+	right -100px
+	top 50px
+	z-index -2
+
+.decoContain.greyDots .portfolioAccent
+	height 350px
+
+
+.blueTriangle
+	position absolute
+	bottom 60px
+	left -10px
+	z-index 2
+	overflow visible
+	+for_bp(sml)
+		bottom 0
+
+.blueTriangle img
+	height 250px

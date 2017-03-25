@@ -1,0 +1,56 @@
+.skills
+	background offWhite
+	// clip-path polygon(0 0, 100% 15%, 100% 87%, 0 100%)
+	angled-edge('outside top', 'upper right', offWhite, 1600, 250)
+	angled-edge('outside bottom', 'lower right', offWhite, 1600, 250)
+	display flex
+	align-items center
+	justify-content center
+	flex-direction column
+	padding 150px 0 250px 0
+	+for_bp(sml)
+		padding 150px 0 50px 0
+	
+
+.skillsContain
+	list-style none
+	display flex
+	flex-wrap wrap
+	justify-content center
+	max-width 50%
+	padding 0
+	margin 0 auto
+	+for_bp(lrg)
+		max-width 100%
+	+for_bp(med)
+		max-width 100%
+	+for_bp(sml)
+		max-width 100%
+
+.skill__item
+	font-size 2rem
+	display flex 
+	flex-direction column
+	align-items center
+	justify-content center
+	margin 40px 40px 0 40px
+	text-align center
+	box-shadow 0 30px 25px lightgrey
+	transition all 0.3s ease-in
+	// transform scale(1)
+	padding 5px 15px
+	+for_bp(med)
+		margin 20px 20px 0 20px
+	+for_bp(sml)
+		margin 5px 5px 0 5px
+	span.break 
+		display block
+
+.skill__item:hover
+	box-shadow 2px 2px 15px lightgrey
+	// transform scale(0.99)
+
+.skill__iconContain
+	font-size 5rem
+	color purple
+	
