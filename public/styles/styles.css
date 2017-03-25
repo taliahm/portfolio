@@ -213,7 +213,7 @@ header {
   position: relative;
 }
 header::after {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221600%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201600,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201900,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -486,7 +486,7 @@ h1.hidden {
   padding: 150px 0 250px 0;
 }
 .skills::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221600%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201600,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201900,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -499,7 +499,7 @@ h1.hidden {
   top: -250px;
 }
 .skills::after {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221600%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201600,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201900,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -850,7 +850,7 @@ h1.hidden {
   position: relative;
 }
 .contact::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221600%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201600,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201900,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -869,6 +869,21 @@ h1.hidden {
   bottom: 20%;
   left: 10%;
 }
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .contactGreenArrow {
+    bottom: 5%;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .contactGreenArrow {
+    bottom: 5%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contactGreenArrow {
+    bottom: 5%;
+  }
+}
 .contactGreenArrow img {
   height: 75px;
   transform: rotate(90deg);
@@ -877,9 +892,20 @@ h1.hidden {
   bottom: 50%;
   right: 10%;
 }
+@media only screen and (max-width: 540px) {
+  .contactPinkLine {
+    bottom: 62%;
+    right: -2%;
+  }
+}
 .contactPinkLine img {
   height: 75px;
   transform: rotate(45deg);
+}
+@media only screen and (max-width: 540px) {
+  .contactPinkLine img {
+    transform: rotate(0deg);
+  }
 }
 .contact__header {
   padding-top: 250px;
@@ -1019,27 +1045,9 @@ html {
 }
 body {
   font-family: 'Montserrat', sans-serif;
+}
+.overflowWrap {
   overflow-x: hidden;
-}
-@media only screen and (max-width: 540px) {
-  body {
-    background: #ff0;
-  }
-}
-@media only screen and (min-width: 540px) and (max-width: 767px) {
-  body {
-    background: #008000;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 940px) {
-  body {
-    background: #00f;
-  }
-}
-@media only screen and (min-width: 940px) and (max-width: 1200px) {
-  body {
-    background: #5f9ea0;
-  }
 }
 h1 {
   font-size: 4rem;

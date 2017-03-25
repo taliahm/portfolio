@@ -1,6 +1,6 @@
 .contact
 	background purple
-	angled-edge('outside top', 'upper right', purple, 1600, 250)
+	angled-edge('outside top', 'upper right', purple, 1900, 250)
 	display flex
 	flex-direction column
 	align-items center
@@ -12,6 +12,12 @@
 .contactGreenArrow
 	bottom 20%
 	left 10%
+	+for_bp(lrg)
+		bottom 5%
+	+for_bp(med)
+		bottom 5%
+	+for_bp(sml)
+		bottom 5%
 
 .contactGreenArrow img
 	height 75px
@@ -20,10 +26,17 @@
 .contactPinkLine
 	bottom 50%
 	right 10%
+	+for_bp(sml)
+		bottom 62%
+		right -2%
+
 
 .contactPinkLine img
 	height 75px
 	transform rotate(45deg)
+	+for_bp(sml)
+		transform rotate(0deg)
+		
 
 .contact__header
 	padding-top 250px
