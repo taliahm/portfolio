@@ -7,20 +7,34 @@ var portApp = {};
 
 portApp.scroll = function () {};
 
+portApp.hamburgerClick = function () {
+	$('#hamburger').on('click', function () {
+		// e.preventDefault()
+		console.log('HAMBURGER');
+		console.log($('#hamburger'));
+		$('.menuInner').toggleClass('menuShow');
+	});
+};
+
 portApp.clickPortfolio = function () {
 	$('.imgContain').on('click', function (e) {
-		console.log('clicked an image contain');
-		console.log($('.imgContain'));
-		var id = $('.imgContain').attr('id');
+		var id = $(e.currentTarget).attr('id');
 		console.log(id);
 		if (id === 'spill') {
 			window.open('http://talialongname.com/spill');
+		} else if (id === 'cleanIt') {
+			window.open('http://cleanit.talialongname.com');
+		} else if (id === 'gift') {
+			window.open('https://giftme.talialongname.com');
+		} else if (id === 'charity') {
+			window.open('http://talialongname.com/TaliaMercyHeart');
 		}
 	});
 };
 
 portApp.events = function () {
 	portApp.clickPortfolio();
+	portApp.hamburgerClick();
 };
 
 portApp.init = function () {

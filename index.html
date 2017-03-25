@@ -11,12 +11,22 @@
 	<link rel="stylesheet" href="./public/styles/styles.css">
 </head>
 <body >
-	<div class="wrapper">
 	<div class="headerAndProfileWrap">
-		<header class="parallax">
-			<div class="menu">
-				<a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-			</div>
+		<div class="menu" id="hamburger">
+			<a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+		</div>
+		<ul class="menuInner">
+			<li>Contact me: hello@talialongname.com</li>
+			<li><a href="#contactForm">Or jump to form</a></li>
+			<li>See my full portfolio!</li>
+			<li>Or, view a piece live:</li>
+			<li>API/Javascript <a href="">Netflix & Spill</a></li>
+			<li>React: <a href="">You Should Be Cleaning</a></li>
+			<li>API/Javascript <a href="">What Should I Bring?</a></li>
+			<li><a href="">PSD Conversion</a></li>
+		</ul>
+		<header>
+			<!-- <div class="wrapper"> -->
 			<div class="header__text">
 				<div class="bgrndImgContain pinkLine">
 					<img src="assets/header__pinkLine.svg" alt="a pink squiggly line for decoration only">
@@ -32,9 +42,11 @@
 				<h2>Marcassa</h2>
 				<h4>Front End Web Developer</h4>
 			</div>
+			<!-- </div> -->
 		</header>
 		<!-- <div class="angle"></div> -->
 		<section class="profileWrap parallax-layer-back">
+			<div class="wrapper">
 				<div class="profile__header section__header">
 					<div class="profileBgrnd smallPurpleCircle">
 						<img src="assets/profile__smallPurpleCircle.svg" alt="small purple circle for decoration">
@@ -45,6 +57,7 @@
 					<h5>who am i</h5>
 					<h1>Hello</h1>
 				</div>
+			</div>
 		</section>
 		<div class="profileContain">
 			<div class="profile__imgContain">
@@ -54,12 +67,13 @@
 				</div>
 			</div>
 			<div class="profile__text">
-				<p>I am a Front End Web Developer with a strong foundation in HTML, CSS3 and Javascript. I am looking to work for a company.</p>
-				<p>My previous career was focused on large scale Event Production and stage management. This has given me an excellent understanding of working with a variety of personalties as well as meeting deadlines.</p>
+				<p>I am a Front End Web Developer who loves to write clean, readable and dry HTML, CSS and Javascript.</p>
+				<p>I am looking to work for a company that solves interesting and engaging problems. My previous career was focused on large scale event production and stage management. This has given me an excellent understanding of working with a variety of personalties as well as a strong work ethic.</p>
 			</div>
 		</div>
 	</div>
 	<section class="skills">
+		<div class="wrapper">
 		<div class="skills__header section__header">
 			<h5>what i know</h5>
 			<h1>Skills & Tools</h1>
@@ -67,76 +81,84 @@
 		<ul class="skillsContain">
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-html5-plain"></i>
+					<i class="devicon-html5-plain-wordmark"></i>
 				</div>
-				<h4>HTML5</h4>
+				<!-- <h4>HTML5</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-css3-plain"></i>
+					<i class="devicon-css3-plain-wordmark"></i>
 				</div>
-				<h4>CSS3</h4>
+				<!-- <h4>CSS3</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
 					<i class="devicon-sass-original"></i>
 				</div>
-				<h4>Sass</h4>
+				<!-- <h4>Sass</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
 					<span class="devicons devicons-stylus"></span>
 				</div>
-				<h4>Stylus</h4>
+				<!-- <h4>Stylus</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
 					<i class="devicon-javascript-plain"></i>
 				</div>
-				<h4>Javascript <span class="break">& APIs</span></h4>
+				<!-- <h4>Javascript <span class="break">& APIs</span></h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-jquery-plain"></i>
+					<i class="devicon-jquery-plain-wordmark"></i>
 				</div>
-				<h4>jQuery</h4>
+				<!-- <h4>jQuery</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-react-original"></i>
+					<i class="devicon-react-original-wordmark"></i>
 				</div>
-				<h4>React</h4>
+				<!-- <h4>React</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-git-plain"></i>
+					<i class="devicon-git-plain-wordmark"></i>
 				</div>
-				<h4>Git</h4>
+				<!-- <h4>Git</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
-					<i class="devicon-github-plain"></i>
+					<i class="devicon-github-plain-wordmark"></i>
 				</div>
-				<h4>Github</h4>
+				<!-- <h4>Github</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
 					<i class="devicon-gulp-plain"></i>
 				</div>
-				<h4>Gulp</h4>
+				<!-- <h4>Gulp</h4> -->
 			</li>
 			<li class="skill__item">
 				<div class="skill__iconContain">
 					<span class="devicons devicons-sublime"></span>
 				</div>
-				<h4>Sublime Text</h4>	
+				<!-- <h4>Sublime Text</h4>	 -->
+			</li>
+			<li class="skill__item">
+				<div class="skill__iconContain">
+					<i class="devicon-illustrator-plain"></i>
+				</div>
+				<!-- <h4>Sublime Text</h4>	 -->
 			</li>
 		</ul>
+		</div>
 	</section>
 	<section class="gallery">
-		<div class="galleryBgrnd purplePinkTriangle">
-			<img src="assets/gallery__purpleTriangle.svg" alt="purple triangle with pink square for decoration">
-		</div>
+		<div class="wrapper">
+			<div class="galleryBgrnd purplePinkTriangle">
+				<img src="assets/gallery__purpleTriangle.svg" alt="purple triangle with pink square for decoration">
+			</div>
 		<div class="galleryBgrnd galleryBlueLines">
 			<img src="assets/gallery__blueLines.svg" alt="blue squiggly lines for decoration">
 		</div>
@@ -148,16 +170,15 @@
 			<h1>My Work</h1>
 		</div>
 		<div class="gallery__containItems">
-			<div class="gallery__item">
+			<div class="gallery__item greyDots--relative">
+				<div class="decoContain greyDots">
+					<img class="portfolioAccent" src="assets/greyDots.svg" alt="grey dots for decoration">
+				</div>
 				<div class="imgContain" id="spill">
-						<!-- <div class="imgOverlay"> -->
-						<!-- </div> -->
 					<img src="assets/spill.jpg" alt="Portfolio Piece">
 				</div>
 				<div class="gallery__itemDescription gallery__item--imgFirst">
 					<h4>Netflix & Spill</h4>
-					<a href="http://talialongname.com/spill" target="_blank">View Live</a>
-					<a href="https://github.com/taliahm/hackerYouProjectFour" target="_blank">Github</a>
 					<p>Have something to drink but nothing to watch? Or have nothing to watch but something to drink? This app can solve both those problems using the LCBO and Movie DB APIs.</p>
 					<ul class="itemDescription__list">
 						<li>APIs</li>
@@ -167,15 +188,15 @@
 						<li>CSS3</li>
 						<li>Sass</li>
 					</ul>
+					<a href="http://talialongname.com/spill" target="_blank" class="viewLive--right">View Live</a>
+					<a href="https://github.com/taliahm/hackerYouProjectFour" target="_blank">Github</a>
 				</div>
 			</div>
 			<div class="gallery__item">
 				<div class="gallery__itemDescription gallery__item--imgSecond">
 					<h4>You Should Be Cleaning!</h4>
-					<a href="http://cleanit.talialongname.com" target="_blank">View Live</a>
-					<a href="https://github.com/taliahm/projectsix" target="_blank">Github</a>
 					<p>An app that helps you keep your living space spec and span with helpful reminder and timers!</p>
-					<ul class="itemDescription__list">
+					<ul class="itemDescription__list itemDescription__list--imgSecond">
 						<li>React</li>
 						<li>Firebase</li>
 						<li>JavaScript</li>
@@ -183,38 +204,67 @@
 						<li>CSS3</li>
 						<li>Sass</li>
 					</ul>
+					<a href="http://cleanit.talialongname.com" target="_blank" class="viewLive--right">View Live</a>
+					<a href="https://github.com/taliahm/projectsix" target="_blank">Github</a>
 				</div>
-				<div class="imgContain">
-					<div class="imgOverlay">
-					</div>
+				<div class="imgContain" id="cleanIt">
 					<img src="assets/cleanit.jpg" alt="Portfolio Piece">
 				</div>
 			</div>
-			<div class="gallery__item gallery__item--imgFirst">
-				<div class="imgContain">
-					<img src="" alt="Portfolio Piece">
-				</div>
-				<div class="gallery__itemDescription galleryDescription--imgSecond">
-					<h4>Title of piece</h4>
-					<p>A description of this portolio piece</p>
-					<a href="#">Link to site</a>
-					<a href="#">Link to Github</a>
-				</div>
+			<div class="gallery__item">
+						<div class="imgContain" id="gift">
+							<img src="assets/spillBig.jpg" alt="Portfolio Piece">
+						</div>
+						<div class="gallery__itemDescription gallery__item--imgFirst">
+							<h4>What Should I Bring?</h4>
+							<p>Need a hostess gift for your next potluck? We've got you covered with selections from the LCBO API. We will even let you know where the nearest LCBO is!</p>
+							<ul class="itemDescription__list">
+								<li>APIs</li>
+								<li>JavaScript</li>
+								<li>ES6</li>
+								<li>Git</li>
+								<li>Gulp</li>
+								<li>jQuery</li>
+								<li>HTML5</li>
+								<li>CSS3</li>
+								<li>Sass</li>
+							</ul>
+							<a href="https://giftme.talialongname.com" target="_blank" class="viewLive--right">View Live</a>
+							<a href="https://github.com/taliahm/ProjectFive" target="_blank">Github</a>
+						</div>
 			</div>
-			<div class="gallery__item gallery__item--imgSecond">
-				<div class="gallery__itemDescription">
-					<h4>Title of piece</h4>
-					<p>A description of this portolio piece</p>
-					<a href="#">Link to site</a>
-					<a href="#">Link to Github</a>
+			<div class="gallery__item">
+				<div class="gallery__itemDescription gallery__item--imgSecond">
+					<h4>PSD Conversion</h4>
+					<p>Created a one page responsive site from a design given to me.</p>
+					<ul class="itemDescription__list itemDescription__list--imgSecond">
+						<li>Responsive Design</li>
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>Sass</li>
+						<li>jQuery</li>
+					</ul>
+					<a href="http://talialongname.com/TaliaMercyHeart" target="_blank" class="viewLive--right">View Live</a>
+					<a href="https://github.com/taliahm/hackerYouProjectTwo" target="_blank">Github</a>
 				</div>
-				<div class="imgContain">
-					<img src="" alt="Portfolio Piece">
+				<div class="imgContain" id="charity">
+					<img src="assets/charity.jpg" alt="Portfolio Piece">
 				</div>
 			</div>
 		</div>
+		<div class="contactImgContain blueTriangle">
+			<img src="assets/contacty_blueTriangle.svg" alt="tblue triangle with pink circle">
+		</div>
+		</div>
 	</section>
 	<section class="contact">
+		<div class="wrapper">
+		<div class="contactBgrndImg contactGreenArrow">
+			<img src="assets/gallery__greenArrow.svg" alt="">
+		</div>
+		<div class="contactBgrndImg contactPinkLine">
+			<img src="assets/gallery__pinkLine.svg" alt="">
+		</div>
 		<div class="contact__header section__header">
 			<h5>get in touch</h5>
 			<h1>Contact</h1>
@@ -229,7 +279,7 @@
 			</ul>
 			<p>or</p>
 		</div>
-		<form action="#">
+		<form action="http://www.focuspocus.io/magic/882cd622706739436389dd4d8a54719d" method="POST">
 			<ul class="formList">
 				<li>
 					<label for="name">Name</label>
@@ -238,7 +288,8 @@
 				<li>
 					<label for="phone">Phone</label>
 					<input name="contact" type="phone" id="phone">
-				
+				</li>
+				<li>
 					<label for="email">Email</label>
 					<input name="contact" type="email" id="email">
 				</li>
@@ -257,8 +308,8 @@
 			<p>Photo Credit: </p>
 			<p> &copy 2017 Talia Harrison-Marcassa </p>
 		</footer>
+		</div>
 	</section>
-	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineLite.min.js"></script>
