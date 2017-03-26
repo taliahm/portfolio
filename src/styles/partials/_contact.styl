@@ -73,11 +73,28 @@
 	margin 0 10px 0 10px
 
 .social li a
-	color pink
 	font-size 3rem
 	transition all 0.3s ease-in
-	&:hover
-		color white
+	color pink
+	&:hover 
+		color #50efcb
+
+	
+	// &:hover .fa-linkedin:before
+	// 	background linear-gradient(pink, purple)
+	// 	color transparent
+	// 	-webkit-background-clip text
+		
+// .social li a .fa-github:before
+// 	color pink
+// 	transition all 0.3s ease-in
+	
+
+// .social li a .fa-github::before:hover
+// 		background linear-gradient(pink, purple)
+// 		color transparent
+// 		-webkit-background-clip text
+
 
 .contact form
 	margin-top 40px
@@ -96,7 +113,7 @@
 	margin-top 30px
 	
 .formList li label 
-	color white
+	color offWhite
 	font-size 1.8rem
 	margin-right 7px
 
@@ -104,9 +121,12 @@
 	background none
 	border none
 	outline none
-	padding 10px 5px
+	padding 20px 5px 5px 5px
 	transition all 0.3s ease-in
 	width 100%
+	font-size 1.6rem
+	letter-spacing 1.4px
+	color offWhite
 	// border-top 1px solid black
 	border-bottom 1px solid darken(purple, 20)
 	
@@ -121,6 +141,9 @@
 	resize none
 	border-top 1px solid darken(purple, 20)
 	border-bottom 1px solid darken(purple, 20)
+	color offWhite
+	font-size 1.6rem
+	letter-spacing 1.4px
 
 .formList input[name=contact]:focus, .formList textarea:focus
 	outline 1px solid pink	

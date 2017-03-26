@@ -18,19 +18,24 @@
 	<h1 class="hidden">Talia Harrison-Marcassa</h1>
 	<div class="overflowWrap">
 	<div class="headerAndProfileWrap">
+	<div class="text">
 		<div class="menu" id="hamburger">
 			<a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
 		</div>
 		<ul class="menuInner">
-			<li>Contact me: hello@talialongname.com</li>
-			<li><a href="#contactForm">Or jump to form</a></li>
-			<li>See my full portfolio!</li>
-			<li>Or, view a piece live:</li>
-			<li>API/Javascript <a href="">Netflix & Spill</a></li>
-			<li>React: <a href="">You Should Be Cleaning</a></li>
-			<li>API/Javascript <a href="">What Should I Bring?</a></li>
-			<li><a href="">PSD Conversion</a></li>
-		</ul>
+			<div class="innerMenuWrap">
+				<li><a id="menuAbout" href="#about">about</a></li>
+				<li><a id="menuSkill" href="#skills">skills</a></li>
+				<li><a id="menuPortfolio" href="#portfolio">portfolio</a></li>
+				<li><a id="menuContact" href="#contact">contact</a></li>
+				<li>or: hello@talialongname.com</li>
+				<li class="innerMenuWrap__item--marginTop">View Portfolio Pieces Live:</li>
+				<li>APIs & Javascript: <a href="http://talialongname.com/spill">Netflix & Spill</a></li>
+				<li>React: <a href="http://cleanit.talialongname.com">You Should Be Cleaning</a></li>
+				<li>APIs & Javascript: <a href="http://giftme.talialongname.com">What Should I Bring?</a></li>
+				<li>Responsive: <a href="http://talialongname.com/TaliaMercyHeart">PSD Conversion</a></li>
+			</div>
+		</ul>	
 		<header>
 			<!-- <div class="wrapper"> -->
 			<div class="header__text">
@@ -43,17 +48,21 @@
 				<div class="bgrndImgContain blueSquiggle">
 					<img src="assets/header__blueSquiggle.svg" alt="a blue squiggly line for decoration only">
 				</div>
+				
 				<h1>Talia</h1>
 				<h2>Harrison</h2>
 				<h2>Marcassa</h2>
 				<h4>Front End Web Developer</h4>
+				
 			</div>
+
 			<!-- </div> -->
 		</header>
+		</div>
 		<!-- <div class="angle"></div> -->
-		<section class="profileWrap parallax-layer-back">
+		<section class="profileWrap">
 			<div class="wrapper">
-				<div class="profile__header section__header">
+				<div class="profile__header section__header" id="about">
 					<div class="profileBgrnd smallPurpleCircle">
 						<img src="assets/profile__smallPurpleCircle.svg" alt="small purple circle for decoration">
 					</div>
@@ -67,7 +76,7 @@
 		</section>
 		<div class="profileContain">
 			<div class="profile__imgContain">
-				<img src="assets/taliaSquare.jpg" alt="picture of the site's creator, Talia">
+				<img src="./assets/taliaSquare.jpg" alt="picture of the site's creator, Talia">
 				<div class="greyCircle">
 					<img src="assets/profile__greyCircle.svg" alt="">
 				</div>
@@ -78,7 +87,7 @@
 			</div>
 		</div>
 	</div>
-	<section class="skills">
+	<section class="skills" id="skills">
 		<div class="wrapper">
 		<div class="skills__header section__header">
 			<h5>what i know</h5>
@@ -160,7 +169,7 @@
 		</ul>
 		</div>
 	</section>
-	<section class="gallery">
+	<section class="gallery" id="portfolio">
 		<div class="wrapper">
 			<div class="galleryBgrnd purplePinkTriangle">
 				<img src="assets/gallery__purpleTriangle.svg" alt="purple triangle with pink square for decoration">
@@ -181,7 +190,7 @@
 					<img class="portfolioAccent" src="assets/greyDots.svg" alt="grey dots for decoration">
 				</div>
 				<div class="imgContain" id="spill">
-					<img src="assets/spill.jpg" alt="Portfolio Piece">
+					<img src="assets/Optimized-spill.png" alt="Portfolio Piece">
 				</div>
 				<div class="gallery__itemDescription gallery__item--imgFirst">
 					<h4>Netflix & Spill</h4>
@@ -263,7 +272,7 @@
 		</div>
 		</div>
 	</section>
-	<section class="contact">
+	<section class="contact" id="contact">
 		<div class="wrapper">
 		<div class="contactBgrndImg contactGreenArrow">
 			<img src="assets/gallery__greenArrow.svg" alt="">
@@ -311,16 +320,16 @@
 			</ul>
 		</form>
 		<footer>
-			<p>Photo Credit: </p>
+			<p>Photo Credit: Pam Lau @pamlau</p>
 			<p> &copy 2017 Talia Harrison-Marcassa </p>
 		</footer>
 		</div>
 	</section>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineLite.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script> -->
 	<script src="./public/app.js"></script>
 </body>
 </html>

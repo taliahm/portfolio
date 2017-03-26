@@ -16,6 +16,7 @@ body
 .overflowWrap
 	overflow-x hidden
 
+
 // +for_bp(sml)
 // 	body 
 // 		background yellow
@@ -73,3 +74,47 @@ h1, h2, h3, h4, h5
 	
 
 
+//404 Page
+
+.fourHeader
+	background purple
+	height 80vh
+	display flex
+	angled-edge('outside bottom', 'lower right', purple, 1900, 250)
+	
+.fourHeader__text
+	margin auto
+	transform rotate(-90deg)
+	color offWhite
+
+.fourHeader__text h1
+	font-size 8rem
+	margin 0
+	line-height 0.8
+
+.fourHeader__text h2
+	font-size 6.5rem
+	margin 0
+	line-height 0.8
+
+.fourHeader__text h4
+	color pink
+	font-size 2rem
+	line-height 2
+	
+.tagForErrorPage
+	color pink
+
+.fourList
+	list-style none
+	font-size 2rem
+	color offWhite
+	align-self center
+	margin-right 20px
+
+.fourList li 
+	padding 20px 0
+	
+.fourList li a
+	color pink
+	text-decoration none

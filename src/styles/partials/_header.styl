@@ -103,19 +103,43 @@ header
 	text-align right
 	list-style none
 	font-size 2rem
+	// background transparentify(offWhite, 0.95)
 	+for_bp(sml)
-		background transparentify(offWhite, 0.95)
 		right 0
 		left 0
 		padding 10px
 		font-size 1.5rem
 
 .menuInner li
+	padding 10px 0
+	color darken(grey, 60)
 	+for_bp(sml)
-		padding 20px 0
+		padding 10px 0
+
+.menuInner li a
+	text-decoration none
+	color pink
+	transition all 0.3s ease-out
+
+.menuInner li a:hover
+	color purple
+
+.innerMenuWrap 
+	padding 30px
+	background transparentify(offWhite, 0.95)
+	angled-edge('outside bottom', 'lower right', transparentify(offWhite, 0.95), 1900, 200)
+	+for_bp(sml)
+		padding 30px 30px 30px 10px
+
+.innerMenuWrap::after
+	z-index 106
+
 
 .menuShow
 	display block
+
+.innerMenuWrap__item--marginTop
+	margin-top 10px
 	
 //Hidden name for SEO
 h1.hidden
