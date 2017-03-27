@@ -4,10 +4,16 @@
 	padding-bottom 150px
 	display flex
 	flex-direction column
-	align-items center
-	// background white
+	// align-items center
+	background white
+	height 100px
+	angled-edge('outside top', 'upper right', white, 1900, 200)
 	+for_bp(sml)
 		padding-bottom 0
+
+.profileBgrnd
+	background white
+	width: 100%;
 		
 //SHAPES in Profile section
 .profile__header
@@ -26,6 +32,7 @@
 .triangleCircle
 	top 0
 	left -150%
+	z-index 2
 	+for_bp(lrg)
 		left -100%
 	+for_bp(med)
@@ -47,12 +54,14 @@
 	justify-content center
 	position relative
 	bottom 25px
+	background white
 	+for_bp(med)
 		bottom 200px
 	+for_bp(sml)
 		flex-direction column
 		// bottom 200px
-		margin 0 10px
+		// margin 0 10px
+		padding 0 10px
 
 .profile__imgContain
 	width 25%

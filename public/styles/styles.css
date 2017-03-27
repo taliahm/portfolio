@@ -205,30 +205,22 @@ textarea {
 }
 header {
   background: #443a8b;
-  min-height: 80vh;
-  z-index: -1;
+  min-height: 100vh;
   display: flex;
   position: relative;
   padding: 100px 0 50px 0;
-  position: relative;
-}
-header::after {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201900,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
-  background-position: center center;
-  background-repeat: no-repeat;
-  content: '';
-  height: 250px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  width: 100%;
-  z-index: 1;
-  bottom: -250px;
 }
 @media only screen and (max-width: 540px) {
   header {
-    min-height: auto;
     padding: 200px 0 150px 0;
+  }
+}
+.spacer {
+  height: 90vh;
+}
+@media only screen and (max-width: 540px) {
+  .spacer {
+    height: 80vh;
   }
 }
 .menu {
@@ -259,6 +251,11 @@ header::after {
 }
 .pinkLine img {
   height: 75px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
+}
+.pinkLine:hover img {
+  transform: rotate(25deg);
 }
 .blueSquiggle {
   bottom: -90%;
@@ -318,6 +315,7 @@ header::after {
   text-align: right;
   list-style: none;
   font-size: 2rem;
+  z-index: 300;
 }
 @media only screen and (max-width: 540px) {
   .menuInner {
@@ -385,12 +383,31 @@ h1.hidden {
   padding-bottom: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background: #fff;
+  height: 100px;
+  position: relative;
+}
+.profileWrap::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22200%22%20width=%221900%22%20fill=%27rgb(255,255,255)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,200%201900,200%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: '';
+  height: 200px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  top: -200px;
 }
 @media only screen and (max-width: 540px) {
   .profileWrap {
     padding-bottom: 0;
   }
+}
+.profileBgrnd {
+  background: #fff;
+  width: 100%;
 }
 .profile__header {
   position: relative;
@@ -408,6 +425,7 @@ h1.hidden {
 .triangleCircle {
   top: 0;
   left: -150%;
+  z-index: 2;
 }
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .triangleCircle {
@@ -436,6 +454,7 @@ h1.hidden {
   justify-content: center;
   position: relative;
   bottom: 25px;
+  background: #fff;
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .profileContain {
@@ -445,7 +464,7 @@ h1.hidden {
 @media only screen and (max-width: 540px) {
   .profileContain {
     flex-direction: column;
-    margin: 0 10px;
+    padding: 0 10px;
   }
 }
 .profile__imgContain {

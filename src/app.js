@@ -6,9 +6,6 @@ const portApp = {};
 
 portApp.hamburgerClick = () => {
 	$('#hamburger').on('click', () => {
-		// e.preventDefault()
-		console.log('HAMBURGER')
-		console.log($('#hamburger'))
 		$('.menuInner').toggleClass('menuShow')
 	})
 }
@@ -57,16 +54,99 @@ portApp.burgerMenuScroll = () => {
 }
 
 // portApp.parallax = () => {
-// 	const controller = new ScrollMagic.Controller();
-// 	new ScrollMagic.Scene({
-// 		// duration: 1000, //this is how long scene lasts
+// 	const controllerLeave = new ScrollMagic.Controller();
+// 	const scene = new ScrollMagic.Scene({
+// 		duration: 300, //this is how long scene lasts
 // 		offset: 0,
-// 		// triggerElement: '.greenArrow' //this is where the scene starts
+// 		// triggerElement: 'header' //this is where the scene starts
 // 	})
-// 	.setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-// 	.setPin('.text')
+// 	// .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
+// 	.setPin('header')
 // 	.addTo(controller);
+
+// 	scene.on('leave', () => {
+// 		console.log('left')
+// 	})
+// 	// const sceneTwo = new ScrollMagic.Scene({
+// 	// 	triggerElement: '#unpin'
+// 	// })
+// 	// .removePin('header')
+// 	// .addTo(controller)
+// 	portApp.windowResize(scene)
 // }
+
+portApp.parallax = () => {
+	const controllerLeave = new ScrollMagic.Controller({
+		globalSceneOptions: {
+			triggerHook: 'onLeave'
+		}
+	});
+	const controllerEnter = new ScrollMagic.Controller({
+		globalSceneOptions: {
+			triggerHook: 'onEnter'
+		}
+	})
+	const header = $('header')
+	const sceneOne = new ScrollMagic.Scene({
+		// triggerElement: '.overflowWrap'
+		// duration: 300
+		offset: 0
+	})
+	.setPin('header', {spacerClass: '.spacer'})
+	.addTo(controllerEnter)
+
+	const sceneTwo = new ScrollMagic.Scene({
+		triggerElement: '.profile__text',
+		reverse: true
+	})
+	// .on('enter', function() {
+	// 	sceneOne.destroy(true)
+	// })
+	.on('enter', function() {
+		sceneOne.removePin('header')
+	})
+	.addTo(controllerLeave)
+
+
+	// const scene = new ScrollMagic.Scene({
+	// 	duration: 300, //this is how long scene lasts
+	// 	offset: 0,
+	// 	// triggerElement: 'header' //this is where the scene starts
+	// })
+	// // .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
+	// .setPin('header')
+	// .addTo(controller);
+
+	// scene.on('leave', () => {
+	// 	console.log('left')
+	// })
+	// const sceneTwo = new ScrollMagic.Scene({
+	// 	triggerElement: '#unpin'
+	// })
+	// .removePin('header')
+	// .addTo(controller)
+	portApp.windowResize(sceneOne)
+}
+
+portApp.windowResize = (scene) => {
+	window.onresize = () => {
+		console.log('we sizing')
+		console.log(scene)
+		scene.destroy(true)
+	}
+}
+
+// portApp.windowResize = (scene) => {
+// 	window.onresize = () => {
+// 		scene.refresh()
+// 	}
+// }
+
+portApp.hoverImg = () => {
+	$('.pinkLine').on('mouseover', () => {
+		console.log('moused')
+	})
+}
 
 portApp.scroll = (target) => {
 	$('body, html').animate({
@@ -82,7 +162,8 @@ portApp.events = () => {
 
 portApp.init = () => {
 	portApp.events()
-	// portApp.parallax()
+	portApp.parallax()
+	// portApp.windowResize()
 }
 
 $(function() {

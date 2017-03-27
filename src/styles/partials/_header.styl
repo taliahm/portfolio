@@ -3,18 +3,22 @@
 	
 header
 	background purple
-	min-height 80vh
-	z-index -1
+	min-height 100vh
+	// z-index -1
 	display flex
 	position relative
 	// clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%)
 	padding 100px 0 50px 0
-	angled-edge('outside bottom', 'lower right', purple, 1900, 250)
+	// angled-edge('outside bottom', 'lower right', purple, 1900, 250)
 	// angled-edge('outside bottom', 'lower right', purple, 250)
 	+for_bp(sml)
-		min-height auto
+		// min-height auto
 		padding 200px 0 150px 0
 
+.spacer
+	height 90vh
+	+for_bp(sml)
+		height 80vh
 .menu 
 	position absolute
 	right 0
@@ -33,6 +37,7 @@ header
 .pinkLine
 	top -90%
 	left 55%
+	// z-index 300
 	+for_bp(sml)
 		left auto
 		top -35%
@@ -41,6 +46,11 @@ header
 	
 .pinkLine img
 	height 75px
+	transform rotate(0deg)
+	transition all 0.3s ease-out
+
+.pinkLine:hover img
+	transform rotate(25deg)
 	
 .blueSquiggle
 	bottom -90%
@@ -72,6 +82,8 @@ header
 	// align-self flex-end
 	// margin 0 auto
 	position relative
+	+for_bp(sml)
+		// margin-bottom 250px
 	// bottom 0
 	// left 50%
 
@@ -103,6 +115,7 @@ header
 	text-align right
 	list-style none
 	font-size 2rem
+	z-index 300
 	// background transparentify(offWhite, 0.95)
 	+for_bp(sml)
 		right 0
