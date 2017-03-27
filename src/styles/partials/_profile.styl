@@ -7,13 +7,10 @@
 	// align-items center
 	background white
 	height 100px
-	angled-edge('outside top', 'upper right', white, 1900, 200)
+	angled-edge('outside top', 'upper left', white, 1900, 200)
 	+for_bp(sml)
 		padding-bottom 0
 
-.profileBgrnd
-	background white
-	width: 100%;
 		
 //SHAPES in Profile section
 .profile__header
@@ -23,27 +20,13 @@
 	position absolute
 
 .smallPurpleCircle
-	bottom -95%
-	right -155%
+	bottom 0
+	right -150%
+	// z-index 300
 
 .smallPurpleCircle img
 	height 75px
 
-.triangleCircle
-	top 0
-	left -150%
-	z-index 2
-	+for_bp(lrg)
-		left -100%
-	+for_bp(med)
-		left -70%
-		top -20%
-	+for_bp(sml)
-		left -100%
-		top -50%
-
-.triangleCircle img
-	height 150px
 
 
 //THESE ARE INSIDE OF THE LARGE DIV

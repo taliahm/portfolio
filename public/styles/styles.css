@@ -205,7 +205,7 @@ textarea {
 }
 header {
   background: #443a8b;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   position: relative;
   padding: 100px 0 50px 0;
@@ -213,14 +213,6 @@ header {
 @media only screen and (max-width: 540px) {
   header {
     padding: 200px 0 150px 0;
-  }
-}
-.spacer {
-  height: 90vh;
-}
-@media only screen and (max-width: 540px) {
-  .spacer {
-    height: 80vh;
   }
 }
 .menu {
@@ -249,10 +241,11 @@ header {
     z-index: -2;
   }
 }
-.pinkLine img {
-  height: 75px;
-  transform: rotate(0deg);
-  transition: all 0.3s ease-out;
+.pinkLine svg {
+  height: 100px;
+  transform: rotate(90deg);
+  stroke: #f05689;
+  fill: none;
 }
 .pinkLine:hover img {
   transform: rotate(25deg);
@@ -267,8 +260,10 @@ header {
     right: 1%;
   }
 }
-.blueSquiggle img {
+.blueSquiggle svg {
   height: 75px;
+  stroke: #2391ee;
+  fill: none;
 }
 .greenArrow {
   bottom: -90%;
@@ -281,8 +276,35 @@ header {
     bottom: auto;
   }
 }
-.greenArrow img {
+.greenArrow svg {
   height: 75px;
+  fill: none;
+  stroke: #50efcb;
+}
+.triangleCircle {
+  bottom: -25%;
+  left: 10%;
+  z-index: 2;
+}
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .triangleCircle {
+    left: -100%;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .triangleCircle {
+    left: -70%;
+    top: -20%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .triangleCircle {
+    left: -100%;
+    top: -50%;
+  }
+}
+.triangleCircle img {
+  height: 175px;
 }
 .header__text {
   transform: rotate(-90deg);
@@ -292,10 +314,11 @@ header {
 }
 .header__text h1 {
   margin: 0;
-  font-size: 8rem;
+  font-size: 9rem;
   color: #fff;
-  line-height: 0.7;
+  line-height: 0.8;
   text-transform: uppercase;
+  letter-spacing: 1.4px;
 }
 .header__text h2 {
   font-size: 6.5rem;
@@ -388,7 +411,7 @@ h1.hidden {
   position: relative;
 }
 .profileWrap::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22200%22%20width=%221900%22%20fill=%27rgb(255,255,255)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,200%201900,200%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22200%22%20width=%221900%22%20fill=%27rgb(255,255,255)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,200%201900,200%201900,0%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -405,10 +428,6 @@ h1.hidden {
     padding-bottom: 0;
   }
 }
-.profileBgrnd {
-  background: #fff;
-  width: 100%;
-}
 .profile__header {
   position: relative;
 }
@@ -416,36 +435,11 @@ h1.hidden {
   position: absolute;
 }
 .smallPurpleCircle {
-  bottom: -95%;
-  right: -155%;
+  bottom: 0;
+  right: -150%;
 }
 .smallPurpleCircle img {
   height: 75px;
-}
-.triangleCircle {
-  top: 0;
-  left: -150%;
-  z-index: 2;
-}
-@media only screen and (min-width: 767px) and (max-width: 940px) {
-  .triangleCircle {
-    left: -100%;
-  }
-}
-@media only screen and (min-width: 540px) and (max-width: 767px) {
-  .triangleCircle {
-    left: -70%;
-    top: -20%;
-  }
-}
-@media only screen and (max-width: 540px) {
-  .triangleCircle {
-    left: -100%;
-    top: -50%;
-  }
-}
-.triangleCircle img {
-  height: 150px;
 }
 .profileContain {
   display: flex;
@@ -554,6 +548,7 @@ h1.hidden {
   justify-content: center;
   flex-direction: column;
   padding: 150px 0 250px 0;
+  position: relative;
 }
 .skills::before {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201900,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
@@ -569,7 +564,7 @@ h1.hidden {
   top: -250px;
 }
 .skills::after {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201900,0%200,250%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(247,247,247)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,0%201900,250%201900,0%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
@@ -586,6 +581,36 @@ h1.hidden {
     padding: 150px 0 50px 0;
   }
 }
+.skillsBgrnd {
+  position: absolute;
+}
+.purpleCircle {
+  bottom: -10%;
+  left: -40%;
+  z-index: 0;
+}
+.purpleCircle img {
+  height: 150px;
+}
+.skillsPinkTriangle {
+  top: -2%;
+  right: -40%;
+}
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .skillsPinkTriangle {
+    right: 0;
+    top: -15%;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .skillsPinkTriangle {
+    right: 1%;
+    top: -105%;
+  }
+}
+.skillsPinkTriangle img {
+  height: 100px;
+}
 .skillsContain {
   list-style: none;
   display: flex;
@@ -594,6 +619,7 @@ h1.hidden {
   max-width: 50%;
   padding: 0;
   margin: 0 auto;
+  position: relative;
 }
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .skillsContain {
@@ -653,6 +679,7 @@ h1.hidden {
 .purplePinkTriangle {
   right: -2%;
   top: 5%;
+  z-index: 2;
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .purplePinkTriangle {
@@ -670,8 +697,8 @@ h1.hidden {
   height: 250px;
 }
 .galleryBlueLines {
-  left: 2%;
-  bottom: 30%;
+  left: 5%;
+  top: 50%;
 }
 @media only screen and (max-width: 540px) {
   .galleryBlueLines {
@@ -679,20 +706,19 @@ h1.hidden {
   }
 }
 .galleryBlueLines img {
-  height: 100px;
+  height: 75px;
 }
 .pinkCircle {
-  left: 2%;
-  bottom: 20%;
+  left: -4%;
+  top: 51%;
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .pinkCircle {
-    bottom: 25%;
     z-index: -2;
   }
 }
 .pinkCircle img {
-  height: 100px;
+  height: 200px;
 }
 .gallery__header {
   padding-top: 150px;
@@ -732,7 +758,7 @@ h1.hidden {
 @media only screen and (max-width: 540px) {
   .gallery__item {
     flex-direction: column;
-    margin: 20px 0;
+    margin: 35px 0;
   }
 }
 .gallery__itemDescription {
@@ -863,37 +889,71 @@ h1.hidden {
 }
 .gallery__item .itemDescription__list li {
   margin: 5px;
-  border: 1px solid #443a8b;
+  border: 1px solid #000;
   padding: 3px;
   font-size: 1.4rem;
+  letter-spacing: 1.2px;
 }
 .gallery__item a {
   text-decoration: none;
   background: #443a8b;
-  padding: 5px 10px;
+  border: 1px solid #443a8b;
+  padding: 10px 30px;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
   display: inline-block;
-  transform: scale(1);
   transition: all 0.3s ease-in;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 .gallery__item a:hover {
   background: #fe6192;
+  border: 1px solid #fe6192;
+}
+.gallery__item a.pinkOutline {
+  background: #fff;
+  border: 1px solid #fe6192;
+  color: #fe6192;
 }
 .gallery__itemDescription .viewLive--right {
   margin-right: 10px;
+}
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .gallery__itemDescription .viewLive--right {
+    margin-right: 0;
+  }
 }
 .greyDots--relative {
   position: relative;
 }
 .decoContain.greyDots {
   position: absolute;
-  right: -100px;
-  top: 50px;
+  bottom: -120px;
+  right: -335px;
   z-index: -2;
 }
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .decoContain.greyDots {
+    right: -200px;
+  }
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .decoContain.greyDots {
+    right: -100px;
+  }
+}
 .decoContain.greyDots .portfolioAccent {
+  height: 350px;
+}
+.decoContain.greyDotsLeft {
+  position: absolute;
+  bottom: -250px;
+  left: -150px;
+  z-index: -2;
+}
+.decoContain.greyDotsLeft .portfolioAccent {
   height: 350px;
 }
 .blueTriangle {
@@ -920,17 +980,17 @@ h1.hidden {
   position: relative;
 }
 .contact::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22250%22%20width=%221900%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,250%201900,250%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22350%22%20width=%221900%22%20fill=%27rgb(68,58,139)%27%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,350%201900,350%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   content: '';
-  height: 250px;
+  height: 350px;
   left: 0;
   position: absolute;
   right: 0;
   width: 100%;
   z-index: 1;
-  top: -250px;
+  top: -350px;
 }
 .contactBgrndImg {
   position: absolute;
@@ -952,11 +1012,11 @@ h1.hidden {
 @media only screen and (max-width: 540px) {
   .contactGreenArrow {
     bottom: 5%;
+    left: 0;
   }
 }
 .contactGreenArrow img {
   height: 75px;
-  transform: rotate(90deg);
 }
 .contactPinkLine {
   bottom: 50%;
@@ -964,8 +1024,7 @@ h1.hidden {
 }
 @media only screen and (max-width: 540px) {
   .contactPinkLine {
-    bottom: 62%;
-    right: -2%;
+    display: none;
   }
 }
 .contactPinkLine img {
@@ -977,8 +1036,24 @@ h1.hidden {
     transform: rotate(0deg);
   }
 }
+.contactBlueCircle {
+  bottom: -50px;
+  right: 5%;
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .contactBlueCircle {
+    display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contactBlueCircle {
+    display: none;
+  }
+}
+.contactBlueCircle img {
+  height: 250px;
+}
 .contact__header {
-  padding-top: 250px;
   color: #fff;
 }
 @media only screen and (max-width: 540px) {
@@ -1058,7 +1133,7 @@ h1.hidden {
   background: none;
   border: none;
   outline: none;
-  padding: 20px 5px 5px 5px;
+  padding: 10px 5px;
   transition: all 0.3s ease-in;
   width: 100%;
   font-size: 1.6rem;
@@ -1096,8 +1171,9 @@ h1.hidden {
   font-size: 2rem;
   text-transform: uppercase;
   border: 1px solid #fe6192;
-  padding: 10px 50px;
+  padding: 10px 70px;
   margin-top: 30px;
+  font-weight: bold;
   transition: all 0.3s ease-in;
 }
 .formList input[type=submit]:hover {
@@ -1124,6 +1200,7 @@ body {
 }
 .overflowWrap {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 h1 {
   font-size: 4rem;

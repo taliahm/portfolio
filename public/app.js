@@ -50,76 +50,73 @@ portApp.burgerMenuScroll = function () {
 	});
 };
 
-// portApp.parallax = () => {
-// 	const controllerLeave = new ScrollMagic.Controller();
-// 	const scene = new ScrollMagic.Scene({
-// 		duration: 300, //this is how long scene lasts
-// 		offset: 0,
-// 		// triggerElement: 'header' //this is where the scene starts
-// 	})
-// 	// .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-// 	.setPin('header')
-// 	.addTo(controller);
-
-// 	scene.on('leave', () => {
-// 		console.log('left')
-// 	})
-// 	// const sceneTwo = new ScrollMagic.Scene({
-// 	// 	triggerElement: '#unpin'
-// 	// })
-// 	// .removePin('header')
-// 	// .addTo(controller)
-// 	portApp.windowResize(scene)
-// }
-
 portApp.parallax = function () {
-	var controllerLeave = new ScrollMagic.Controller({
-		globalSceneOptions: {
-			triggerHook: 'onLeave'
-		}
-	});
-	var controllerEnter = new ScrollMagic.Controller({
-		globalSceneOptions: {
-			triggerHook: 'onEnter'
-		}
-	});
-	var header = $('header');
-	var sceneOne = new ScrollMagic.Scene({
-		// triggerElement: '.overflowWrap'
-		// duration: 300
-		offset: 0
-	}).setPin('header', { spacerClass: '.spacer' }).addTo(controllerEnter);
+	var controller = new ScrollMagic.Controller();
+	var scene = new ScrollMagic.Scene({
+		duration: 300 })
+	// .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
+	.setPin('header').addTo(controller);
 
-	var sceneTwo = new ScrollMagic.Scene({
-		triggerElement: '.profile__text',
-		reverse: true
-	})
-	// .on('enter', function() {
-	// 	sceneOne.destroy(true)
-	// })
-	.on('enter', function () {
-		sceneOne.removePin('header');
-	}).addTo(controllerLeave);
-
-	// const scene = new ScrollMagic.Scene({
-	// 	duration: 300, //this is how long scene lasts
-	// 	offset: 0,
-	// 	// triggerElement: 'header' //this is where the scene starts
-	// })
-	// // .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-	// .setPin('header')
-	// .addTo(controller);
-
-	// scene.on('leave', () => {
-	// 	console.log('left')
-	// })
 	// const sceneTwo = new ScrollMagic.Scene({
 	// 	triggerElement: '#unpin'
 	// })
 	// .removePin('header')
 	// .addTo(controller)
-	portApp.windowResize(sceneOne);
+	portApp.windowResize(scene);
 };
+
+// portApp.parallax = () => {
+// 	const controllerLeave = new ScrollMagic.Controller({
+// 		globalSceneOptions: {
+// 			triggerHook: 'onLeave'
+// 		}
+// 	});
+// 	const controllerEnter = new ScrollMagic.Controller({
+// 		globalSceneOptions: {
+// 			triggerHook: 'onEnter'
+// 		}
+// 	})
+// 	const header = $('header')
+// 	const sceneOne = new ScrollMagic.Scene({
+// 		// triggerElement: '.overflowWrap'
+// 		// duration: 300
+// 		offset: 0
+// 	})
+// 	.setPin('header', {spacerClass: '.spacer'})
+// 	.addTo(controllerEnter)
+
+// 	const sceneTwo = new ScrollMagic.Scene({
+// 		triggerElement: '.profile__text',
+// 		reverse: true
+// 	})
+// 	// .on('enter', function() {
+// 	// 	sceneOne.destroy(true)
+// 	// })
+// 	.on('enter', function() {
+// 		sceneOne.removePin('header')
+// 	})
+// 	.addTo(controllerLeave)
+
+
+// 	// const scene = new ScrollMagic.Scene({
+// 	// 	duration: 300, //this is how long scene lasts
+// 	// 	offset: 0,
+// 	// 	// triggerElement: 'header' //this is where the scene starts
+// 	// })
+// 	// // .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
+// 	// .setPin('header')
+// 	// .addTo(controller);
+
+// 	// scene.on('leave', () => {
+// 	// 	console.log('left')
+// 	// })
+// 	// const sceneTwo = new ScrollMagic.Scene({
+// 	// 	triggerElement: '#unpin'
+// 	// })
+// 	// .removePin('header')
+// 	// .addTo(controller)
+// 	portApp.windowResize(sceneOne)
+// }
 
 portApp.windowResize = function (scene) {
 	window.onresize = function () {
@@ -152,9 +149,22 @@ portApp.events = function () {
 	portApp.burgerMenuScroll();
 };
 
+portApp.animation = function () {
+	var pinkLine = $('#pinkLine');
+	var greenArrow = $('#greenArrow');
+	var blueLineOne = $('#blueSquiggleOne');
+	var blueLineTwo = $('#blueSquiggleTwo');
+	var blueLineThree = $('#blueSquiggleThree');
+	console.log(greenArrow);
+	var timeline = new TimelineLite();
+	timeline.fromTo(greenArrow, 2, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineOne, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineTwo, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineThree, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(pinkLine, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1);
+	console.log(timeline);
+};
+
 portApp.init = function () {
 	portApp.events();
-	portApp.parallax();
+	portApp.animation();
+	// portApp.parallax()
 	// portApp.windowResize()
 };
 

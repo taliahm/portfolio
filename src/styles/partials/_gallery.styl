@@ -12,6 +12,7 @@
 .purplePinkTriangle
 	right -2%
 	top 5%
+	z-index 2
 	+for_bp(med)
 		top -1%
 		z-index 3
@@ -23,24 +24,23 @@
 	height 250px
 	
 .galleryBlueLines
-	left 2%
-	bottom 30%
+	left 5%
+	top 50%
 	+for_bp(sml)
 		left -10%
 
 .galleryBlueLines img
-	height 100px
+	height 75px
 	
 
 .pinkCircle
-	left 2%
-	bottom 20%
+	left -4%
+	top 51%
 	+for_bp(med)
-		bottom 25%
 		z-index -2
 
 .pinkCircle img
-	height 100px
+	height 200px
 
 
 .gallery__header
@@ -67,7 +67,7 @@
 	margin 75px 0 
 	+for_bp(sml)
 		flex-direction column
-		margin 20px 0
+		margin 35px 0
 
 .gallery__itemDescription
 	padding 10px 20px
@@ -158,42 +158,66 @@
 
 .gallery__item .itemDescription__list li
 	margin 5px
-	border 1px solid purple
+	border 1px solid black
 	padding 3px
 	font-size 1.4rem
+	letter-spacing 1.2px
 
 
 .gallery__item a
 	text-decoration none
-	// color pink
 	background purple
-	padding 5px 10px
+	border 1px solid purple
+	padding 10px 30px
 	color white
-	font-size 1.8rem
+	font-size 1.6rem
 	margin-bottom 10px
 	display inline-block
-	// letter-spacing 1.2px
-	// margin-right 10px
-	transform scale(1)
 	transition all 0.3s ease-in
+	text-transform uppercase
+	letter-spacing 1.2px
+	font-weight bold
 	&:hover
 		background pink
+		border 1px solid pink
+
+.gallery__item a.pinkOutline
+	background white
+	border 1px solid pink
+	color pink
+	
 
 .gallery__itemDescription .viewLive--right
 	margin-right 10px
-	// margin-left 20px
-	// display inline-block
+	+for_bp(lrg)
+		margin-right 0
+
+
 
 .greyDots--relative
 	position relative
 	
 .decoContain.greyDots
 	position absolute
-	right -100px
-	top 50px
+	bottom -120px
+	right -335px
 	z-index -2
+	+for_bp(lrg)
+		right -200px
+	+for_bp(med)
+		right -100px
 
 .decoContain.greyDots .portfolioAccent
+	height 350px
+	
+
+.decoContain.greyDotsLeft
+	position absolute
+	bottom -250px
+	left -150px
+	z-index -2
+
+.decoContain.greyDotsLeft .portfolioAccent
 	height 350px
 
 

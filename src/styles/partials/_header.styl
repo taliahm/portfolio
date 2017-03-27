@@ -3,7 +3,7 @@
 	
 header
 	background purple
-	min-height 100vh
+	height 100vh
 	// z-index -1
 	display flex
 	position relative
@@ -15,10 +15,6 @@ header
 		// min-height auto
 		padding 200px 0 150px 0
 
-.spacer
-	height 90vh
-	+for_bp(sml)
-		height 80vh
 .menu 
 	position absolute
 	right 0
@@ -44,10 +40,11 @@ header
 		right 90%
 		z-index -2
 	
-.pinkLine img
-	height 75px
-	transform rotate(0deg)
-	transition all 0.3s ease-out
+.pinkLine svg
+	height 100px
+	transform rotate(90deg)
+	stroke #F05689
+	fill none
 
 .pinkLine:hover img
 	transform rotate(25deg)
@@ -59,8 +56,10 @@ header
 		bottom -50%
 		right 1%
 
-.blueSquiggle img
+.blueSquiggle svg
 	height 75px
+	stroke #2391ee
+	fill none
 
 .greenArrow
 	bottom -90%
@@ -71,35 +70,49 @@ header
 		bottom auto
 		
 
-.greenArrow img
+.greenArrow svg
 	height 75px
+	fill none
+	stroke #50EFCB
+	// clip-rule evenodd
+	// fill-rule evenodd
+//Positioned relative to header
+.triangleCircle
+	bottom -25%
+	left 10%
+	z-index 2
+	+for_bp(lrg)
+		left -100%
+	+for_bp(med)
+		left -70%
+		top -20%
+	+for_bp(sml)
+		left -100%
+		top -50%
+
+.triangleCircle img
+	height 175px
 	
 .header__text 
 	transform rotate(-90deg)
-	// transform-origin: bottom center
 	color black
 	margin auto
-	// align-self flex-end
-	// margin 0 auto
 	position relative
-	+for_bp(sml)
-		// margin-bottom 250px
-	// bottom 0
-	// left 50%
 
 .header__text h1 
 	margin 0
-	font-size 8rem
+	font-size 9rem
 	color white
-	line-height 0.7
+	line-height 0.8
 	text-transform uppercase
-
-
+	letter-spacing 1.4px
+	
 .header__text h2
 	font-size 6.5rem
 	color white
 	text-transform uppercase
 	line-height 0.9
+	// letter-spacing 1px
 
 .header__text h4
 	font-size 2rem

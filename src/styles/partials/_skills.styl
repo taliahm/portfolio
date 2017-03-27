@@ -1,16 +1,40 @@
 .skills
 	background offWhite
-	// clip-path polygon(0 0, 100% 15%, 100% 87%, 0 100%)
 	angled-edge('outside top', 'upper right', offWhite, 1900, 250)
-	angled-edge('outside bottom', 'lower right', offWhite, 1900, 250)
+	angled-edge('outside bottom', 'lower left', offWhite, 1900, 250)
 	display flex
 	align-items center
 	justify-content center
 	flex-direction column
 	padding 150px 0 250px 0
+	position relative
 	+for_bp(sml)
 		padding 150px 0 50px 0
+
+.skillsBgrnd
+	position absolute
+
+.purpleCircle
+	bottom -10%
+	left -40%
+	z-index 0
 	
+.purpleCircle img
+	height 150px
+
+.skillsPinkTriangle
+	top -2%
+	right -40%
+	+for_bp(lrg)
+		right 0
+		top -15%
+	+for_bp(med)
+		right 1%
+		top -105%
+
+.skillsPinkTriangle img
+	height 100px
+
 
 .skillsContain
 	list-style none
@@ -20,6 +44,7 @@
 	max-width 50%
 	padding 0
 	margin 0 auto
+	position relative
 	+for_bp(lrg)
 		max-width 100%
 	+for_bp(med)
