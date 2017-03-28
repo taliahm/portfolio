@@ -1,15 +1,28 @@
-console.log('hello')
+console.log('Thank you so much for taking the time to look through my portfolio! I can be reached at hello@talialongname.com')
 
 const portApp = {};
 
-
-
+//Menu Click Function
 portApp.hamburgerClick = () => {
 	$('#hamburger').on('click', () => {
-		$('.menuInner').toggleClass('menuShow')
+		let menuStatus = $('.menuInner').hasClass('menuShow')
+		if(menuStatus === false) {
+			$('#hamburgerIcon').addClass('hamburgerSpin').delay(500).queue(() => {
+				$('#hamburgerIcon').removeClass('hamburgerSpin').addClass('hamburgerHide')
+				$('.exitIcon').addClass('exitIconShow')
+			})
+			$('.menuInner').toggleClass('menuShow')
+		}
+		else if (menuStatus === true) {
+			$('.menuInner').toggleClass('menuShow')
+			$('.exitIcon').removeClass('exitIconShow')
+			$('#hamburgerIcon').removeClass('hamburgerHide')
+			$('#hamburgerIcon').removeClass('hamburgerSpin')
+		}
 	})
 }
 
+//Click functions for portfolio images
 portApp.clickPortfolio = () => {
 	$('.imgContain').on('click', (e) => {
 		let id = $(e.currentTarget).attr('id')
@@ -24,11 +37,12 @@ portApp.clickPortfolio = () => {
 			window.open('https://giftme.talialongname.com')
 		}
 		else if(id === 'charity'){
-			window.open('http://talialongname.com/TaliaMercyHeart')
+			window.open('http://talialongname.com/psdConversion/')
 		}
 	})
 }
 
+//Smooth scroll to page sections when clicked in hamburger menu
 portApp.burgerMenuScroll = () => {
 	$('#menuAbout').on('click', (e) => {
 		e.preventDefault();
@@ -53,132 +67,63 @@ portApp.burgerMenuScroll = () => {
 
 }
 
-portApp.parallax = () => {
-	const controller = new ScrollMagic.Controller();
-	const scene = new ScrollMagic.Scene({
-		duration: 300, //this is how long scene lasts
-		// offset: 0,
-		// triggerElement: 'header' //this is where the scene starts
-	})
-	// .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-	.setPin('header')
-	.addTo(controller);
-
-
-	// const sceneTwo = new ScrollMagic.Scene({
-	// 	triggerElement: '#unpin'
-	// })
-	// .removePin('header')
-	// .addTo(controller)
-	portApp.windowResize(scene)
-}
-
-// portApp.parallax = () => {
-// 	const controllerLeave = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onLeave'
-// 		}
-// 	});
-// 	const controllerEnter = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onEnter'
-// 		}
-// 	})
-// 	const header = $('header')
-// 	const sceneOne = new ScrollMagic.Scene({
-// 		// triggerElement: '.overflowWrap'
-// 		// duration: 300
-// 		offset: 0
-// 	})
-// 	.setPin('header', {spacerClass: '.spacer'})
-// 	.addTo(controllerEnter)
-
-// 	const sceneTwo = new ScrollMagic.Scene({
-// 		triggerElement: '.profile__text',
-// 		reverse: true
-// 	})
-// 	// .on('enter', function() {
-// 	// 	sceneOne.destroy(true)
-// 	// })
-// 	.on('enter', function() {
-// 		sceneOne.removePin('header')
-// 	})
-// 	.addTo(controllerLeave)
-
-
-// 	// const scene = new ScrollMagic.Scene({
-// 	// 	duration: 300, //this is how long scene lasts
-// 	// 	offset: 0,
-// 	// 	// triggerElement: 'header' //this is where the scene starts
-// 	// })
-// 	// // .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-// 	// .setPin('header')
-// 	// .addTo(controller);
-
-// 	// scene.on('leave', () => {
-// 	// 	console.log('left')
-// 	// })
-// 	// const sceneTwo = new ScrollMagic.Scene({
-// 	// 	triggerElement: '#unpin'
-// 	// })
-// 	// .removePin('header')
-// 	// .addTo(controller)
-// 	portApp.windowResize(sceneOne)
-// }
-
-portApp.windowResize = (scene) => {
-	window.onresize = () => {
-		console.log('we sizing')
-		console.log(scene)
-		scene.destroy(true)
-	}
-}
-
-// portApp.windowResize = (scene) => {
-// 	window.onresize = () => {
-// 		scene.refresh()
-// 	}
-// }
-
-portApp.hoverImg = () => {
-	$('.pinkLine').on('mouseover', () => {
-		console.log('moused')
-	})
-}
-
+//Smooth scroll function reused 
 portApp.scroll = (target) => {
 	$('body, html').animate({
 		scrollTop: target.offset().top}, 'fast');
 }
 
+//Events
 portApp.events = () => {
 	portApp.clickPortfolio();
 	portApp.hamburgerClick();
 	portApp.burgerMenuScroll();
 }
 
+//Animation in Header
 portApp.animation = () => {
 	const pinkLine = $('#pinkLine');
 	const greenArrow = $('#greenArrow');
 	const blueLineOne = $('#blueSquiggleOne')
 	const blueLineTwo = $('#blueSquiggleTwo')
 	const blueLineThree = $('#blueSquiggleThree')
-	console.log(greenArrow)
 	const timeline = new TimelineLite()
 	timeline
-		.fromTo(greenArrow, 2, {drawSVG: 0}, {drawSVG: "100%"}, 1)
-		.fromTo(blueLineOne, 1, {drawSVG: 0}, {drawSVG: "100%"}, 1)
-		.fromTo(blueLineTwo, 1, {drawSVG: 0}, {drawSVG: "100%"}, 1)
-		.fromTo(blueLineThree, 1, {drawSVG: 0}, {drawSVG: "100%"}, 1)
-		.fromTo(pinkLine, 1, {drawSVG: 0}, {drawSVG: "100%"}, 1)
-	console.log(timeline)
+		.fromTo(greenArrow, 1.5, {drawSVG: 0}, {drawSVG: "100%"}, 0.5)
+		.fromTo(blueLineOne, 1, {drawSVG: 0}, {drawSVG: "100%"}, 0.5)
+		.fromTo(blueLineTwo, 1, {drawSVG: 0}, {drawSVG: "100%"}, 0.7)
+		.fromTo(blueLineThree, 1, {drawSVG: 0}, {drawSVG: "100%"}, 0.5)
+		.fromTo(pinkLine, 1.5, {drawSVG: 0}, {drawSVG: "100%"}, 0.7)
+}
+
+//Animation in Footer
+portApp.contactAnimation = () => {
+	const pinkLineContact = $('#contact__pinkLine')
+	const greenArrowContact = $('#contact__greenArrow')
+	const blueCircleContact = $('#contact__blueCircle')
+	const triangleContact = $('#contact__triangle')
+	const pinkCircleContact = $('#contact__pinkCircle')
+	const timelineContact = new TimelineLite({paused:true})
+	timelineContact
+		.fromTo(pinkLineContact, 1.5, {drawSVG: 0}, {drawSVG: "100%"}, 0.5)
+		.fromTo(greenArrowContact, 1.5, {drawSVG: 0}, {drawSVG: "100%"}, 1)
+		.fromTo(blueCircleContact, 1.5, {drawSVG: 0, fill: 'none'}, {drawSVG: "100%"}, 1)
+		.fromTo(triangleContact, 1.5, {drawSVG: 0, fill: 'none'}, {drawSVG: "100%"}, 0)
+		.fromTo(pinkCircleContact, 1.5, {drawSVG: 0, fill: 'none'}, {drawSVG: "100%"}, 0)
+	const controller = new ScrollMagic.Controller();
+	const scene = new ScrollMagic.Scene({
+		triggerElement: '#trigger'
+	})
+		.on('enter', () => {
+			timelineContact.play()
+		})
+		.addTo(controller)
 }
 
 portApp.init = () => {
 	portApp.events()
 	portApp.animation()
-	// portApp.parallax()
-	// portApp.windowResize()
+	portApp.contactAnimation()
 }
 
 $(function() {

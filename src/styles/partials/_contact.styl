@@ -12,7 +12,6 @@
 .contactGreenArrow
 	bottom 20%
 	left 10%
-	// z-index -1
 	+for_bp(lrg)
 		bottom 5%
 	+for_bp(med)
@@ -21,9 +20,10 @@
 		bottom 5%
 		left 0
 
-.contactGreenArrow img
+.contactGreenArrow svg
 	height 75px
-	// transform rotate(90deg)
+	fill none
+	stroke #50EFCB
 
 .contactPinkLine
 	bottom 50%
@@ -32,8 +32,10 @@
 		display none
 
 
-.contactPinkLine img
+.contactPinkLine svg
 	height 75px
+	stroke #F05689
+	fill none
 	transform rotate(45deg)
 	+for_bp(sml)
 		transform rotate(0deg)
@@ -46,12 +48,14 @@
 	+for_bp(sml)
 		display none
 
-.contactBlueCircle img
+.contactBlueCircle svg
 	height 250px
+	stroke #458BC9
+	fill none
+	stroke-width:16
 
 
 .contact__header
-	// padding-top 250px
 	color white
 	+for_bp(sml)
 		padding-top 0
@@ -165,12 +169,12 @@
 	&:active
 		color lighten(purple, 10)
 
-footer
+.smallFooter
 	margin-top 80px
 	padding-bottom 40px
 	text-align center
 
-footer p
+.smallFooter p
 	margin 0
 	font-size 1.4rem
 	

@@ -1,10 +1,9 @@
-//GALLERY Sections
+//GALLERY and Portfolio Section
 
 .gallery
 	position relative
 	padding-top 150px
 	padding-bottom 250px
-	// background white
 
 .galleryBgrnd
 	position absolute
@@ -51,7 +50,7 @@
 	flex-direction column
 	align-items center
 	margin 0 auto
-	max-width 60%
+	max-width 70%
 	+for_bp(xlrg)
 		max-width 80%
 	+for_bp(lrg)
@@ -72,7 +71,9 @@
 .gallery__itemDescription
 	padding 10px 20px
 	max-width: 50%;
-	font-size 1.3rem
+	font-size 1.6rem
+	line-height 1.4
+	letter-spacing 1.1px
 	+for_bp(xlrg)
 		max-width 60%
 	+for_bp(med)
@@ -163,7 +164,6 @@
 	font-size 1.4rem
 	letter-spacing 1.2px
 
-
 .gallery__item a
 	text-decoration none
 	background purple
@@ -186,13 +186,23 @@
 	border 1px solid pink
 	color pink
 	
+.gallery__item a.pdfLink
+	background none
+	border none
+	color black
+	padding 0 0 0 5px
+	font-weight normal
+	text-transform capitalize
+	font-size 1.4rem
+	transition all 0.3s ease-in
+	&:hover
+		color pink
+	
 
 .gallery__itemDescription .viewLive--right
 	margin-right 10px
 	+for_bp(lrg)
 		margin-right 0
-
-
 
 .greyDots--relative
 	position relative
@@ -230,5 +240,15 @@
 	+for_bp(sml)
 		bottom 0
 
-.blueTriangle img
+.blueTriangle svg
 	height 250px
+
+.blueTriangle #contact__pinkCircle
+	fill none
+	stroke #FE6192
+	stroke-width 6
+
+.blueTriangle #contact__triangle
+	fill none
+	stroke #2391EE
+	stroke-width 3

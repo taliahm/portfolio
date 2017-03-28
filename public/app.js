@@ -1,16 +1,30 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-console.log('hello');
+console.log('Thank you so much for taking the time to look through my portfolio! I can be reached at hello@talialongname.com');
 
 var portApp = {};
 
+//Menu Click Function
 portApp.hamburgerClick = function () {
 	$('#hamburger').on('click', function () {
-		$('.menuInner').toggleClass('menuShow');
+		var menuStatus = $('.menuInner').hasClass('menuShow');
+		if (menuStatus === false) {
+			$('#hamburgerIcon').addClass('hamburgerSpin').delay(500).queue(function () {
+				$('#hamburgerIcon').removeClass('hamburgerSpin').addClass('hamburgerHide');
+				$('.exitIcon').addClass('exitIconShow');
+			});
+			$('.menuInner').toggleClass('menuShow');
+		} else if (menuStatus === true) {
+			$('.menuInner').toggleClass('menuShow');
+			$('.exitIcon').removeClass('exitIconShow');
+			$('#hamburgerIcon').removeClass('hamburgerHide');
+			$('#hamburgerIcon').removeClass('hamburgerSpin');
+		}
 	});
 };
 
+//Click functions for portfolio images
 portApp.clickPortfolio = function () {
 	$('.imgContain').on('click', function (e) {
 		var id = $(e.currentTarget).attr('id');
@@ -22,11 +36,12 @@ portApp.clickPortfolio = function () {
 		} else if (id === 'gift') {
 			window.open('https://giftme.talialongname.com');
 		} else if (id === 'charity') {
-			window.open('http://talialongname.com/TaliaMercyHeart');
+			window.open('http://talialongname.com/psdConversion/');
 		}
 	});
 };
 
+//Smooth scroll to page sections when clicked in hamburger menu
 portApp.burgerMenuScroll = function () {
 	$('#menuAbout').on('click', function (e) {
 		e.preventDefault();
@@ -50,122 +65,51 @@ portApp.burgerMenuScroll = function () {
 	});
 };
 
-portApp.parallax = function () {
-	var controller = new ScrollMagic.Controller();
-	var scene = new ScrollMagic.Scene({
-		duration: 300 })
-	// .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-	.setPin('header').addTo(controller);
-
-	// const sceneTwo = new ScrollMagic.Scene({
-	// 	triggerElement: '#unpin'
-	// })
-	// .removePin('header')
-	// .addTo(controller)
-	portApp.windowResize(scene);
-};
-
-// portApp.parallax = () => {
-// 	const controllerLeave = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onLeave'
-// 		}
-// 	});
-// 	const controllerEnter = new ScrollMagic.Controller({
-// 		globalSceneOptions: {
-// 			triggerHook: 'onEnter'
-// 		}
-// 	})
-// 	const header = $('header')
-// 	const sceneOne = new ScrollMagic.Scene({
-// 		// triggerElement: '.overflowWrap'
-// 		// duration: 300
-// 		offset: 0
-// 	})
-// 	.setPin('header', {spacerClass: '.spacer'})
-// 	.addTo(controllerEnter)
-
-// 	const sceneTwo = new ScrollMagic.Scene({
-// 		triggerElement: '.profile__text',
-// 		reverse: true
-// 	})
-// 	// .on('enter', function() {
-// 	// 	sceneOne.destroy(true)
-// 	// })
-// 	.on('enter', function() {
-// 		sceneOne.removePin('header')
-// 	})
-// 	.addTo(controllerLeave)
-
-
-// 	// const scene = new ScrollMagic.Scene({
-// 	// 	duration: 300, //this is how long scene lasts
-// 	// 	offset: 0,
-// 	// 	// triggerElement: 'header' //this is where the scene starts
-// 	// })
-// 	// // .setClassToggle('.headerAndProfileWrap', 'backgroundColor')
-// 	// .setPin('header')
-// 	// .addTo(controller);
-
-// 	// scene.on('leave', () => {
-// 	// 	console.log('left')
-// 	// })
-// 	// const sceneTwo = new ScrollMagic.Scene({
-// 	// 	triggerElement: '#unpin'
-// 	// })
-// 	// .removePin('header')
-// 	// .addTo(controller)
-// 	portApp.windowResize(sceneOne)
-// }
-
-portApp.windowResize = function (scene) {
-	window.onresize = function () {
-		console.log('we sizing');
-		console.log(scene);
-		scene.destroy(true);
-	};
-};
-
-// portApp.windowResize = (scene) => {
-// 	window.onresize = () => {
-// 		scene.refresh()
-// 	}
-// }
-
-portApp.hoverImg = function () {
-	$('.pinkLine').on('mouseover', function () {
-		console.log('moused');
-	});
-};
-
+//Smooth scroll function reused 
 portApp.scroll = function (target) {
 	$('body, html').animate({
 		scrollTop: target.offset().top }, 'fast');
 };
 
+//Events
 portApp.events = function () {
 	portApp.clickPortfolio();
 	portApp.hamburgerClick();
 	portApp.burgerMenuScroll();
 };
 
+//Animation in Header
 portApp.animation = function () {
 	var pinkLine = $('#pinkLine');
 	var greenArrow = $('#greenArrow');
 	var blueLineOne = $('#blueSquiggleOne');
 	var blueLineTwo = $('#blueSquiggleTwo');
 	var blueLineThree = $('#blueSquiggleThree');
-	console.log(greenArrow);
 	var timeline = new TimelineLite();
-	timeline.fromTo(greenArrow, 2, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineOne, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineTwo, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueLineThree, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(pinkLine, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 1);
-	console.log(timeline);
+	timeline.fromTo(greenArrow, 1.5, { drawSVG: 0 }, { drawSVG: "100%" }, 0.5).fromTo(blueLineOne, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 0.5).fromTo(blueLineTwo, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 0.7).fromTo(blueLineThree, 1, { drawSVG: 0 }, { drawSVG: "100%" }, 0.5).fromTo(pinkLine, 1.5, { drawSVG: 0 }, { drawSVG: "100%" }, 0.7);
+};
+
+//Animation in Footer
+portApp.contactAnimation = function () {
+	var pinkLineContact = $('#contact__pinkLine');
+	var greenArrowContact = $('#contact__greenArrow');
+	var blueCircleContact = $('#contact__blueCircle');
+	var triangleContact = $('#contact__triangle');
+	var pinkCircleContact = $('#contact__pinkCircle');
+	var timelineContact = new TimelineLite({ paused: true });
+	timelineContact.fromTo(pinkLineContact, 1.5, { drawSVG: 0 }, { drawSVG: "100%" }, 0.5).fromTo(greenArrowContact, 1.5, { drawSVG: 0 }, { drawSVG: "100%" }, 1).fromTo(blueCircleContact, 1.5, { drawSVG: 0, fill: 'none' }, { drawSVG: "100%" }, 1).fromTo(triangleContact, 1.5, { drawSVG: 0, fill: 'none' }, { drawSVG: "100%" }, 0).fromTo(pinkCircleContact, 1.5, { drawSVG: 0, fill: 'none' }, { drawSVG: "100%" }, 0);
+	var controller = new ScrollMagic.Controller();
+	var scene = new ScrollMagic.Scene({
+		triggerElement: '#trigger'
+	}).on('enter', function () {
+		timelineContact.play();
+	}).addTo(controller);
 };
 
 portApp.init = function () {
 	portApp.events();
 	portApp.animation();
-	// portApp.parallax()
-	// portApp.windowResize()
+	portApp.contactAnimation();
 };
 
 $(function () {

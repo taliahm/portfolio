@@ -3,17 +3,12 @@
 	
 header
 	background purple
-	height 100vh
-	// z-index -1
+	height 90vh
 	display flex
 	position relative
-	// clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%)
 	padding 100px 0 50px 0
-	// angled-edge('outside bottom', 'lower right', purple, 1900, 250)
-	// angled-edge('outside bottom', 'lower right', purple, 250)
 	+for_bp(sml)
-		// min-height auto
-		padding 200px 0 150px 0
+		height 700px
 
 .menu 
 	position absolute
@@ -26,6 +21,7 @@ header
 .menu a
 	font-size 3rem
 	color white
+	
 //This is all the header floating images
 .bgrndImgContain
 	position absolute
@@ -33,7 +29,6 @@ header
 .pinkLine
 	top -90%
 	left 55%
-	// z-index 300
 	+for_bp(sml)
 		left auto
 		top -35%
@@ -74,8 +69,7 @@ header
 	height 75px
 	fill none
 	stroke #50EFCB
-	// clip-rule evenodd
-	// fill-rule evenodd
+
 //Positioned relative to header
 .triangleCircle
 	bottom -25%
@@ -112,7 +106,6 @@ header
 	color white
 	text-transform uppercase
 	line-height 0.9
-	// letter-spacing 1px
 
 .header__text h4
 	font-size 2rem
@@ -129,7 +122,6 @@ header
 	list-style none
 	font-size 2rem
 	z-index 300
-	// background transparentify(offWhite, 0.95)
 	+for_bp(sml)
 		right 0
 		left 0
@@ -160,7 +152,6 @@ header
 .innerMenuWrap::after
 	z-index 106
 
-
 .menuShow
 	display block
 
@@ -171,3 +162,16 @@ header
 h1.hidden
 	position absolute
 	left -99999px
+	
+
+.hamburgerSpin
+	animation spin 0.5s ease-out forwards
+
+.hamburgerHide
+	display none
+
+.exitIcon
+	display none
+
+.exitIconShow
+	display block
