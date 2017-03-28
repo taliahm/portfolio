@@ -7,9 +7,10 @@ portApp.hamburgerClick = () => {
 	$('#hamburger').on('click', () => {
 		let menuStatus = $('.menuInner').hasClass('menuShow')
 		if(menuStatus === false) {
-			$('#hamburgerIcon').addClass('hamburgerSpin').delay(500).queue(() => {
+			$('#hamburgerIcon').addClass('hamburgerSpin').delay(500).queue(function() {
 				$('#hamburgerIcon').removeClass('hamburgerSpin').addClass('hamburgerHide')
-				$('.exitIcon').addClass('exitIconShow')
+				$('.exitIcon').addClass('exitIconShow');
+				$(this).dequeue();
 			})
 			$('.menuInner').toggleClass('menuShow')
 		}

@@ -257,6 +257,7 @@ header {
 .menu a {
   font-size: 3rem;
   color: #fff;
+  text-decoration: none;
 }
 .bgrndImgContain {
   position: absolute;
@@ -390,9 +391,9 @@ header {
   }
 }
 .menuInner li a {
-  text-decoration: none;
   color: #fe6192;
   transition: all 0.3s ease-out;
+  text-decoration: none;
 }
 .menuInner li a:hover {
   color: #443a8b;
@@ -469,7 +470,8 @@ h1.hidden {
 }
 @media only screen and (max-width: 540px) {
   .profileWrap {
-    padding-bottom: 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
   }
 }
 .profile__header {
@@ -496,7 +498,8 @@ h1.hidden {
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .profileContain {
-    bottom: 200px;
+    flex-direction: column;
+    padding: 0 10px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -509,9 +512,16 @@ h1.hidden {
   width: 25%;
   position: relative;
 }
+@media only screen and (min-width: 767px) and (max-width: 940px) {
+  .profile__imgContain {
+    width: 35%;
+  }
+}
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .profile__imgContain {
-    width: 45%;
+    order: 2;
+    width: 55%;
+    margin-top: 40px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -528,31 +538,28 @@ h1.hidden {
 }
 .profile__text {
   font-size: 1.7rem;
-  width: 35%;
+  width: 40%;
   position: relative;
   z-index: 101;
-  left: -15px;
+  left: 15px;
   color: #4c4c52;
 }
 @media only screen and (min-width: 940px) and (max-width: 1200px) {
   .profile__text {
     width: 50%;
-    background: #fff;
     padding-left: 20px;
   }
 }
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .profile__text {
     width: 60%;
-    background: #fff;
-    padding-left: 20px;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .profile__text {
-    width: 60%;
-    background: #fff;
-    padding-left: 20px;
+    width: 90%;
+    order: 1;
+    left: auto;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -781,7 +788,7 @@ h1.hidden {
 }
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .gallery__containItems {
-    max-width: 80%;
+    max-width: 90%;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
@@ -799,6 +806,12 @@ h1.hidden {
   align-items: center;
   margin: 75px 0;
 }
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .gallery__item {
+    flex-direction: column;
+    margin: 35px 0;
+  }
+}
 @media only screen and (max-width: 540px) {
   .gallery__item {
     flex-direction: column;
@@ -814,12 +827,15 @@ h1.hidden {
 }
 @media only screen and (min-width: 940px) and (max-width: 1200px) {
   .gallery__itemDescription {
-    max-width: 60%;
+    max-width: 75%;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .gallery__itemDescription {
+    order: 2;
     max-width: 80%;
+    padding: 0;
+    margin: 0 0 20px 0;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -834,6 +850,11 @@ h1.hidden {
   left: -20px;
   margin-left: 50px;
 }
+@media only screen and (min-width: 940px) and (max-width: 1200px) {
+  .gallery__item--imgFirst {
+    margin-left: 20px;
+  }
+}
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .gallery__item--imgFirst {
     margin-left: 20px;
@@ -842,6 +863,8 @@ h1.hidden {
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .gallery__item--imgFirst {
     margin-left: 0;
+    left: auto;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -856,6 +879,11 @@ h1.hidden {
   text-align: right;
   margin-right: 50px;
 }
+@media only screen and (min-width: 940px) and (max-width: 1200px) {
+  .gallery__item--imgSecond {
+    margin-right: 20px;
+  }
+}
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .gallery__item--imgSecond {
     margin-right: 20px;
@@ -864,6 +892,8 @@ h1.hidden {
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .gallery__item--imgSecond {
     margin-right: 0;
+    right: auto;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -882,6 +912,11 @@ h1.hidden {
   transition: all 0.3s ease-in-out;
   flex-shrink: 0;
 }
+@media only screen and (min-width: 940px) and (max-width: 1200px) {
+  .gallery__item .imgContain {
+    max-width: 50%;
+  }
+}
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .gallery__item .imgContain {
     max-width: 50%;
@@ -889,13 +924,15 @@ h1.hidden {
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .gallery__item .imgContain {
-    max-width: 50%;
+    box-shadow: 14px -10px 30px #b2b2b8;
+    max-width: 70%;
+    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 540px) {
   .gallery__item .imgContain {
     box-shadow: 14px -10px 30px #b2b2b8;
-    max-width: 70%;
+    max-width: 80%;
     margin-bottom: 20px;
   }
 }
@@ -920,6 +957,11 @@ h1.hidden {
   padding: 0;
   flex-wrap: wrap;
 }
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .gallery__item .itemDescription__list {
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 540px) {
   .gallery__item .itemDescription__list {
     justify-content: center;
@@ -927,6 +969,11 @@ h1.hidden {
 }
 .gallery__item .itemDescription__list--imgSecond {
   justify-content: flex-end;
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .gallery__item .itemDescription__list--imgSecond {
+    justify-content: center;
+  }
 }
 @media only screen and (max-width: 540px) {
   .gallery__item .itemDescription__list--imgSecond {
@@ -957,6 +1004,11 @@ h1.hidden {
 .gallery__item a:hover {
   background: #fe6192;
   border: 1px solid #fe6192;
+}
+@media only screen and (max-width: 540px) {
+  .gallery__item a {
+    font-size: 1.2rem;
+  }
 }
 .gallery__item a.pinkOutline {
   background: #fff;

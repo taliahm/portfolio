@@ -8,7 +8,8 @@
 	height 100px
 	angled-edge('outside top', 'upper left', white, 1900, 200)
 	+for_bp(sml)
-		padding-bottom 0
+		padding-bottom 50px
+		padding-top 50px
 
 		
 //SHAPES in Profile section
@@ -36,7 +37,9 @@
 	bottom 25px
 	background white
 	+for_bp(med)
-		bottom 200px
+		flex-direction column
+		padding 0 10px
+		// bottom 200px
 	+for_bp(sml)
 		flex-direction column
 		padding 0 10px
@@ -44,8 +47,13 @@
 .profile__imgContain
 	width 25%
 	position relative
+	+for_bp(lrg)
+		width 35%
 	+for_bp(med)
-		width 45%
+		// width 45%
+		order 2
+		width 55%
+		margin-top 40px
 	+for_bp(sml)
 		order 2
 		width 75%
@@ -58,27 +66,25 @@
 
 .profile__text
 	font-size 1.7rem
-	width 35%
+	width 40%
 	position relative
 	z-index 101
-	left -15px
+	left 15px
 	color darken(grey, 40)
 	+for_bp(xlrg)
 		width 50%
-		background transparentify(white, 50)
 		padding-left 20px
 	+for_bp(lrg)
 		width 60%
-		background transparentify(white, 50)
-		padding-left 20px
 	+for_bp(med)
-		width 60%
-		background transparentify(white, 50)
-		padding-left 20px
+		width 90%
+		order 1
+		left auto
 	+for_bp(sml)
 		width 100%
 		order 1
 		left auto
+		// text-align center
 		
 
 

@@ -54,7 +54,7 @@
 	+for_bp(xlrg)
 		max-width 80%
 	+for_bp(lrg)
-		max-width 80%
+		max-width 90%
 	+for_bp(med)
 		max-width 95%
 	+for_bp(sml)
@@ -64,6 +64,9 @@
 	display flex
 	align-items center
 	margin 75px 0 
+	+for_bp(med)
+		flex-direction column
+		margin 35px 0
 	+for_bp(sml)
 		flex-direction column
 		margin 35px 0
@@ -75,9 +78,12 @@
 	line-height 1.4
 	letter-spacing 1.1px
 	+for_bp(xlrg)
-		max-width 60%
+		max-width 75%
 	+for_bp(med)
+		order 2
 		max-width 80%
+		padding 0
+		margin 0 0 20px 0
 	+for_bp(sml)
 		order 2
 		max-width 80%
@@ -87,10 +93,14 @@
 .gallery__item--imgFirst
 	left -20px
 	margin-left: 50px
+	+for_bp(xlrg)
+		margin-left 20px
 	+for_bp(lrg)
 		margin-left 20px
 	+for_bp(med)
 		margin-left 0
+		left auto
+		text-align center
 	+for_bp(sml)
 		margin-left 0
 		left auto
@@ -100,10 +110,14 @@
 	right -20px
 	text-align right
 	margin-right 50px
+	+for_bp(xlrg)
+		margin-right 20px
 	+for_bp(lrg)
 		margin-right 20px
 	+for_bp(med)
 		margin-right 0
+		right auto
+		text-align center
 	+for_bp(sml)
 		margin-right 0
 		right auto
@@ -117,13 +131,17 @@
 	box-shadow 2px 30px 30px grey
 	transition all 0.3s ease-in-out
 	flex-shrink 0
+	+for_bp(xlrg)
+		max-width 50%
 	+for_bp(lrg)
 		max-width 50%
 	+for_bp(med)
-		max-width 50%
-	+for_bp(sml)
 		box-shadow 14px -10px 30px #b2b2b8;
 		max-width 70%
+		margin-bottom 20px
+	+for_bp(sml)
+		box-shadow 14px -10px 30px #b2b2b8;
+		max-width 80%
 		margin-bottom 20px
 	
 
@@ -149,11 +167,15 @@
 	display flex
 	padding 0
 	flex-wrap wrap
+	+for_bp(med)
+		justify-content center
 	+for_bp(sml)
 		justify-content center
 
 .gallery__item .itemDescription__list--imgSecond
 	justify-content flex-end
+	+for_bp(med)
+		justify-content center
 	+for_bp(sml)
 		justify-content center
 
@@ -180,6 +202,8 @@
 	&:hover
 		background pink
 		border 1px solid pink
+	+for_bp(sml)
+		font-size 1.2rem
 
 .gallery__item a.pinkOutline
 	background white

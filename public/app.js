@@ -13,6 +13,7 @@ portApp.hamburgerClick = function () {
 			$('#hamburgerIcon').addClass('hamburgerSpin').delay(500).queue(function () {
 				$('#hamburgerIcon').removeClass('hamburgerSpin').addClass('hamburgerHide');
 				$('.exitIcon').addClass('exitIconShow');
+				$(this).dequeue();
 			});
 			$('.menuInner').toggleClass('menuShow');
 		} else if (menuStatus === true) {
