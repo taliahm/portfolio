@@ -42,6 +42,15 @@ portApp.clickPortfolio = function () {
 	});
 };
 
+//Skills Click
+portApp.skillFlip = function () {
+	$('.skill__iconContain').on('mouseover', function (e) {
+		console.log(e);
+		var id = $(this).attr('id');
+		$(id).addClass('showText');
+	});
+};
+
 //Smooth scroll to page sections when clicked in hamburger menu
 portApp.burgerMenuScroll = function () {
 	$('#menuAbout').on('click', function (e) {
@@ -77,6 +86,7 @@ portApp.events = function () {
 	portApp.clickPortfolio();
 	portApp.hamburgerClick();
 	portApp.burgerMenuScroll();
+	portApp.skillFlip();
 };
 
 //Animation in Header

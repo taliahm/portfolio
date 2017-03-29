@@ -28,42 +28,49 @@ header
 	position absolute
 
 .pinkLine
-	top -90%
-	left 55%
+	left -90%
+	top 25%
+	+for_bp(med)
+		left -40%
+		top -30%
 	+for_bp(sml)
-		left auto
-		top -35%
-		right 90%
-		z-index -2
+		top -75%
+		left -15%
+		// right 90%
+		// z-index -2
 	
 .pinkLine svg
 	height 100px
 	transform rotate(90deg)
 	stroke #F05689
 	fill none
+	+for_bp(sml)
+		transform rotate(45deg)
 
 .pinkLine:hover img
 	transform rotate(25deg)
 	
 .blueSquiggle
-	bottom -90%
-	right 15%
+	top -90%
+	left -45%
 	+for_bp(sml)
 		bottom -50%
 		right 1%
+		left auto
 
 .blueSquiggle svg
 	height 75px
 	stroke #2391ee
 	fill none
+	// transform rotate(45deg)
 
 .greenArrow
-	bottom -90%
-	right 75%
+	top 50%
+	right -40%
 	+for_bp(sml)
-		top -25%
-		right -10%
-		bottom auto
+		top auto
+		right 0
+		bottom -40%
 		
 
 .greenArrow svg
@@ -89,7 +96,7 @@ header
 	height 175px
 	
 .header__text 
-	transform rotate(-90deg)
+	// transform rotate(-90deg)
 	color black
 	margin auto
 	position relative
@@ -101,12 +108,16 @@ header
 	line-height 0.8
 	text-transform uppercase
 	letter-spacing 1.4px
+	+for_bp(sml)
+		font-size 8rem
 	
 .header__text h2
 	font-size 6.5rem
 	color white
 	text-transform uppercase
 	line-height 0.9
+	+for_bp(sml)
+		font-size 5rem
 
 .header__text h4
 	font-size 2rem

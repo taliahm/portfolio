@@ -43,6 +43,15 @@ portApp.clickPortfolio = () => {
 	})
 }
 
+//Skills Click
+portApp.skillFlip = () => {
+	$('.skill__iconContain').on('mouseover', function(e) {
+		console.log(e)
+		let id = $(this).attr('id')
+		$(id).addClass('showText')
+	})
+}
+
 //Smooth scroll to page sections when clicked in hamburger menu
 portApp.burgerMenuScroll = () => {
 	$('#menuAbout').on('click', (e) => {
@@ -79,6 +88,7 @@ portApp.events = () => {
 	portApp.clickPortfolio();
 	portApp.hamburgerClick();
 	portApp.burgerMenuScroll();
+	portApp.skillFlip();
 }
 
 //Animation in Header

@@ -263,15 +263,19 @@ header {
   position: absolute;
 }
 .pinkLine {
-  top: -90%;
-  left: 55%;
+  left: -90%;
+  top: 25%;
+}
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .pinkLine {
+    left: -40%;
+    top: -30%;
+  }
 }
 @media only screen and (max-width: 540px) {
   .pinkLine {
-    left: auto;
-    top: -35%;
-    right: 90%;
-    z-index: -2;
+    top: -75%;
+    left: -15%;
   }
 }
 .pinkLine svg {
@@ -280,17 +284,23 @@ header {
   stroke: #f05689;
   fill: none;
 }
+@media only screen and (max-width: 540px) {
+  .pinkLine svg {
+    transform: rotate(45deg);
+  }
+}
 .pinkLine:hover img {
   transform: rotate(25deg);
 }
 .blueSquiggle {
-  bottom: -90%;
-  right: 15%;
+  top: -90%;
+  left: -45%;
 }
 @media only screen and (max-width: 540px) {
   .blueSquiggle {
     bottom: -50%;
     right: 1%;
+    left: auto;
   }
 }
 .blueSquiggle svg {
@@ -299,14 +309,14 @@ header {
   fill: none;
 }
 .greenArrow {
-  bottom: -90%;
-  right: 75%;
+  top: 50%;
+  right: -40%;
 }
 @media only screen and (max-width: 540px) {
   .greenArrow {
-    top: -25%;
-    right: -10%;
-    bottom: auto;
+    top: auto;
+    right: 0;
+    bottom: -40%;
   }
 }
 .greenArrow svg {
@@ -340,7 +350,6 @@ header {
   height: 175px;
 }
 .header__text {
-  transform: rotate(-90deg);
   color: #000;
   margin: auto;
   position: relative;
@@ -353,11 +362,21 @@ header {
   text-transform: uppercase;
   letter-spacing: 1.4px;
 }
+@media only screen and (max-width: 540px) {
+  .header__text h1 {
+    font-size: 8rem;
+  }
+}
 .header__text h2 {
   font-size: 6.5rem;
   color: #fff;
   text-transform: uppercase;
   line-height: 0.9;
+}
+@media only screen and (max-width: 540px) {
+  .header__text h2 {
+    font-size: 5rem;
+  }
 }
 .header__text h4 {
   font-size: 2rem;
@@ -539,6 +558,7 @@ h1.hidden {
 .profile__text {
   font-size: 1.7rem;
   width: 40%;
+  margin-left: 20px;
   position: relative;
   z-index: 101;
   left: 15px;
@@ -553,6 +573,7 @@ h1.hidden {
 @media only screen and (min-width: 767px) and (max-width: 940px) {
   .profile__text {
     width: 60%;
+    margin-left: 0;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 767px) {
@@ -570,7 +591,7 @@ h1.hidden {
   }
 }
 .profile__text p:first-child {
-  line-height: 1.5;
+  line-height: 1.7;
   font-size: 2rem;
   letter-spacing: 1.1px;
   color: #fe6192;
@@ -687,7 +708,27 @@ h1.hidden {
     max-width: 100%;
   }
 }
+.skill__item--text {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #f7f7f7;
+  color: #443a8b;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.5s ease-in;
+}
+.skill__item--text h4 {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
 .skill__item {
+  position: relative;
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -695,7 +736,7 @@ h1.hidden {
   justify-content: center;
   margin: 40px 40px 0 40px;
   text-align: center;
-  box-shadow: 0 30px 25px #d3d3d3;
+  box-shadow: -2px 9px 25px #d3d3d3;
   transition: all 0.3s ease-in;
   padding: 5px 15px;
 }
@@ -715,9 +756,13 @@ h1.hidden {
 .skill__item:hover {
   box-shadow: 2px 2px 15px #d3d3d3;
 }
+.skill__item:hover .skill__item--text {
+  opacity: 1;
+}
 .skill__iconContain {
   font-size: 5rem;
   color: #443a8b;
+  transition: all 0.3s ease-in;
 }
 .gallery {
   position: relative;
@@ -983,7 +1028,7 @@ h1.hidden {
 .gallery__item .itemDescription__list li {
   margin: 5px;
   border: 1px solid #000;
-  padding: 3px;
+  padding: 5px 7px;
   font-size: 1.4rem;
   letter-spacing: 1.2px;
 }
@@ -1014,6 +1059,10 @@ h1.hidden {
   background: #fff;
   border: 1px solid #fe6192;
   color: #fe6192;
+}
+.gallery__item a.pinkOutline:hover {
+  background: #fe6192;
+  color: #fff;
 }
 .gallery__item a.pdfLink {
   background: none;
@@ -1250,7 +1299,7 @@ h1.hidden {
   align-items: flex-end;
 }
 .formList li:nth-child(4) {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .formList li label {
   color: #f7f7f7;
@@ -1267,7 +1316,7 @@ h1.hidden {
   font-size: 1.6rem;
   letter-spacing: 1.4px;
   color: #f7f7f7;
-  border-bottom: 1px solid #211c43;
+  border-bottom: 1px solid #fff;
 }
 .formList textarea {
   background: none;
@@ -1276,10 +1325,10 @@ h1.hidden {
   padding: 10px 5px;
   transition: all 0.3s ease-in;
   width: 100%;
-  height: 75px;
+  height: 95px;
   resize: none;
-  border-top: 1px solid #211c43;
-  border-bottom: 1px solid #211c43;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   color: #f7f7f7;
   font-size: 1.6rem;
   letter-spacing: 1.4px;
@@ -1300,7 +1349,7 @@ h1.hidden {
   text-transform: uppercase;
   border: 1px solid #fe6192;
   padding: 10px 70px;
-  margin-top: 30px;
+  margin-top: 40px;
   font-weight: bold;
   transition: all 0.3s ease-in;
 }
@@ -1312,9 +1361,11 @@ h1.hidden {
   color: #5649af;
 }
 .smallFooter {
-  margin-top: 80px;
+  margin-top: 90px;
   padding-bottom: 40px;
   text-align: center;
+  color: #fff;
+  letter-spacing: 1.2px;
 }
 .smallFooter p {
   margin: 0;
